@@ -1,0 +1,55 @@
+---
+/** YouTube clip fSWWc_odAZk — 0:17–0:28, custom scrub bar only (no skip/pause overlay). */
+const videoId = 'fSWWc_odAZk';
+const clipStart = 17;
+const clipEnd = 28;
+const clipDuration = clipEnd - clipStart;
+---
+
+<div
+  class="hero-video relative aspect-video w-full overflow-hidden rounded-2xl border border-primary/25 bg-black shadow-lg shadow-black/20 ring-1 ring-primary/15"
+  data-hero-video
+  data-video-id={videoId}
+  data-clip-start={clipStart}
+  data-clip-end={clipEnd}
+>
+  <div class="hero-video__player absolute left-1/2 top-1/2 h-[135%] w-[135%] max-w-none -translate-x-1/2 -translate-y-1/2" data-hero-yt-mount></div>
+
+  <div class="hero-video__shield absolute inset-0 z-[5] cursor-default" aria-hidden="true"></div>
+
+  <div
+    class="pointer-events-none absolute inset-0 z-[6] bg-primary/20 mix-blend-soft-light"
+    aria-hidden="true"
+  />
+  <div
+    class="pointer-events-none absolute inset-0 z-[7] bg-gradient-to-br from-primary/25 via-transparent to-primary/10"
+    aria-hidden="true"
+  />
+
+  <div class="pointer-events-none absolute inset-x-0 bottom-0 z-[10] bg-gradient-to-t from-black/85 via-black/50 to-transparent px-3 pb-2.5 pt-6">
+    <input
+      type="range"
+      min="0"
+      max="1000"
+      value="0"
+      class="hero-video__scrub pointer-events-auto h-1 w-full cursor-pointer appearance-none rounded-full bg-white/25 accent-primary [&::-webkit-slider-thumb]:size-3 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-primary"
+      aria-label="Video progress"
+      data-hero-scrub
+    />
+    <p class="mt-1.5 text-left text-[11px] font-medium tabular-nums text-white/90" data-hero-time>
+      0:00 / 0:{clipDuration.toString().padStart(2, '0')}
+    </p>
+  </div>
+</div>
+
+<script>
+  import { initHeroVideos } from '../scripts/hero-video.ts';
+  initHeroVideos();
+  document.addEventListener('astro:after-swap', initHeroVideos);
+</script>
+
+<style>
+  .hero-video__shield {
+    background: transparent;
+  }
+</style>

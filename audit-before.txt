@@ -1,0 +1,101 @@
+﻿node.exe : npm warn Unknown env config "devdir". This will stop working in the next major version of npm. See `npm 
+help npmrc` for supported config options.
+At line:1 char:1
++ & "C:\/node.exe" "C:\/node_modules/npm/bin/npm-cli.js" audit
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (npm warn Unknow...config options.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+# npm audit report
+
+astro  <=7.2.7
+Severity: critical
+Astro: Remote code execution through AVIF image optimization - https://github.com/advisories/GHSA-26w7-cxv4-gfx2
+Astro: Authorization bypass from missing path-segment boundary check when stripping the configured base - https://github.com/advisories/GHSA-376h-93r7-7g6f
+fix available via `npm audit fix`
+node_modules/astro
+
+devalue  <=5.9.2
+Severity: high
+Svelte devalue: DoS via malformed input - https://github.com/advisories/GHSA-9rgm-9g3h-6x36
+devalue: `stringify`/`uneval` serialize shared memory - https://github.com/advisories/GHSA-j22f-vq7h-c4qm
+devalue: Residual sparse-array CPU amplification in uneval - https://github.com/advisories/GHSA-hx4r-w6wj-j8fg
+devalue: Repeated primitive strings cause quadratic expansion in uneval - https://github.com/advisories/GHSA-mcm9-63f2-9j32
+devalue: Sparse arrays emitted by uneval cause eager allocation when evaluated - https://github.com/advisories/GHSA-wf3x-273g-mvxv
+devalue: stringifyAsync can cause an unhandled rejection despite a caught returned promise - https://github.com/advisories/GHSA-x5rw-q4pp-hg5g
+devalue: Malformed null-prototype object keys bypass __proto__ rejection via property-key coercion - https://github.com/advisories/GHSA-4q55-j62x-fr9h
+devalue: Custom ArrayBuffer revivers can bypass typed-array allocation validation - https://github.com/advisories/GHSA-r9w8-h9r3-54w4
+fix available via `npm audit fix`
+node_modules/devalue
+
+http-cache-semantics  <=4.2.0
+Severity: high
+http-cache-semantics max-stale handling can disclose cross-user cached responses - https://github.com/advisories/GHSA-ch52-4w7c-c8xp
+fix available via `npm audit fix`
+node_modules/http-cache-semantics
+
+js-yaml  4.0.0 - 4.3.1
+Severity: high
+JS-YAML: Quadratic CPU consumption in !!omap resolution (3.x and 4.x) — CVE-2026-59870 fix not backported - https://github.com/advisories/GHSA-5p4m-2wfm-xmqj
+js-yaml: maxTotalMergeKeys does not limit CPU use for empty merge sources - https://github.com/advisories/GHSA-2883-xcg3-v3hh
+fix available via `npm audit fix`
+node_modules/js-yaml
+
+nanoid  <3.3.18
+Severity: high
+nanoid: custom generators can loop indefinitely when size is zero - https://github.com/advisories/GHSA-2v37-7h3g-55p8
+fix available via `npm audit fix`
+node_modules/nanoid
+
+postcss  <=8.5.22
+Severity: moderate
+PostCSS: incomplete fix of GHSA-6g55-p6wh-862q — attacker-controlled sourceMappingURL reads arbitrary .map files when `from` is unset - https://github.com/advisories/GHSA-fxqj-rqcc-2cmp
+fix available via `npm audit fix`
+node_modules/postcss
+
+sharp  <=0.35.5-rc.1
+Severity: high
+sharp inherited vulnerabilities in libvips: CVE-2026-33327, CVE-2026-33328, CVE-2026-35590, CVE-2026-35591 - https://github.com/advisories/GHSA-f88m-g3jw-g9cj
+sharp: Vulnerabilities in libheif: GHSA-g89c-p67h-r497 and GHSA-2jg2-4ch7-h545 - https://github.com/advisories/GHSA-rgj7-g3m4-5g8c
+sharp : Vulnerability in librsvg dependency CVE-2026-96889 - https://github.com/advisories/GHSA-wq5f-xc86-pv6w
+fix available via `npm audit fix --force`
+Will install sharp@0.35.5, which is a breaking change
+node_modules/sharp
+
+smol-toml  <=1.8.0
+Severity: high
+smol-toml: Denial of Service via malformed TOML documents - https://github.com/advisories/GHSA-7w5x-hrqm-74c2
+smol-toml: Quadratic-time parse() from parseKey rescanning to end of document on each key line - https://github.com/advisories/GHSA-r4xh-jqrq-34v2
+fix available via `npm audit fix`
+node_modules/smol-toml
+
+source-map-js  1.0.0 - 1.2.1
+Severity: high
+source-map-js allows event-loop denial of service through indexed source-map section offsets - https://github.com/advisories/GHSA-68fv-2mgg-jv7q
+fix available via `npm audit fix`
+node_modules/source-map-js
+
+svgo  4.0.0 - 4.0.2
+Severity: high
+SVGO: removeScripts allows executable links through namespace and control-character bypasses - https://github.com/advisories/GHSA-w27v-7q3p-w38r
+SVGO: removeScripts incompletely sanitizes executable HTML in SVG foreignObject elements - https://github.com/advisories/GHSA-4vpr-x523-8j87
+fix available via `npm audit fix`
+node_modules/svgo
+
+vite  8.0.0 - 8.1.5
+Severity: high
+launch-editor: escapeCmdArgs() omits % escaping on Windows - https://github.com/advisories/GHSA-698v-4r3x-3vcv
+launch-editor: Editor CLI flag misinterpretation causing arbitrary command execution for some editors - https://github.com/advisories/GHSA-r825-w8mm-5pxw
+launch-editor: `fs.existsSync()` existence check can be bypassed on Windows - https://github.com/advisories/GHSA-587h-7wmj-h5pm
+Vite: Cross origin script execution through Vite custom middleware - https://github.com/advisories/GHSA-9jrq-w75r-8gcw
+Vite: Files outside `server.fs.allow` could be served when project paths match system paths on non-Windows machine - https://github.com/advisories/GHSA-rq7h-c2jc-7f22
+fix available via `npm audit fix`
+node_modules/vite
+
+11 vulnerabilities (1 moderate, 9 high, 1 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
