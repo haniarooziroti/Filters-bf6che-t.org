@@ -28,7 +28,7 @@ export const en: Translations = {
     titleLine2: 'Aimbot, ESP and Wallhack',
     subtitle:
       'Battlefield 6 hacks built for Conquest, Breakthrough, Rush, and REDSEC—aimbot tuning, ESP wallhack, vehicle tags, and radar so you read pushes and flanks instead of guessing.',
-    ctaPrimary: 'View plans',
+    ctaPrimary: 'Compare hack plans',
     ctaDiscord: 'Join Discord',
     modesLabel: 'Modes',
     modes: ['Conquest', 'Breakthrough', 'Rush', 'REDSEC'],
@@ -130,7 +130,7 @@ export const en: Translations = {
       {
         title: 'Loader updates',
         subtitle: 'After game patches',
-        desc: 'Status notes in Discord when Battlefield 6 or anti-cheat builds change. Reload the loader when the banner says to.',
+        desc: 'Discord #status and the site banner call out when Battlefield 6 or anti-cheat builds change—grab the matching portal build before you queue.',
         bullets: [
           'Portal downloads for current builds',
           'Discord #status for patch windows',
@@ -160,10 +160,14 @@ export const en: Translations = {
       {
         title: 'Loader updates after patches',
         desc: 'New builds usually go out within hours of a major Battlefield 6 or anti-cheat update. Check Discord #status before you queue.',
+        descAlt:
+          'After a big BF6 or anti-cheat patch, refreshed loader builds typically land within hours—confirm #status on Discord before you queue.',
       },
       {
         title: 'Readable aimbot defaults',
         desc: 'Smoothness, FOV, and bone priority start conservative for Conquest and Breakthrough. Tighten them when you are comfortable.',
+        descAlt:
+          'Out of the box, aimbot smoothness, FOV, and bone priority stay modest on Conquest and Breakthrough so you can raise them once you are used to the menu.',
       },
       {
         title: 'Discord support',
@@ -180,6 +184,8 @@ export const en: Translations = {
       {
         title: 'License moves',
         desc: 'Hardware resets and PC changes go through Discord or the portal instead of locking you to one machine forever.',
+        descAlt:
+          'Need a new rig or fresh Windows install? HWID resets and license transfers run through the portal or Discord instead of tying you to a single PC.',
       },
     ],
     metrics: [
@@ -206,8 +212,8 @@ export const en: Translations = {
     titleHighlight: 'three steps',
     intro:
       'Pick a plan, download the loader from your portal, load a mode preset, then launch Battlefield 6 through EA App or Steam. Discord help is there if something looks off.',
-    ctaPrimary: 'View plans',
-    ctaSecondary: 'Setup FAQ',
+    ctaPrimary: 'Open product hub',
+    ctaSecondary: 'Battlefield 6 setup FAQ',
     ctaPrimaryHref: productBase,
     ctaSecondaryHref: '/faq/',
     steps: [
@@ -617,8 +623,8 @@ export const en: Translations = {
   },
   ui: {
     skipLink: 'Skip to main content',
-    browseCheats: 'View plans',
-    browseCheatsMobile: 'View plans',
+    browseCheats: 'Shop hack plans',
+    browseCheatsMobile: 'Shop plans',
     homeAria: 'Battlefield 6 Hacks home',
     checkoutAria: 'Start checkout',
     discordAria: 'Join Battlefield 6 Hacks on Discord',

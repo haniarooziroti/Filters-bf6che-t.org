@@ -86,6 +86,8 @@ export interface WorkflowItem {
 export interface WhyCompareRow {
   title: string;
   desc: string;
+  /** Shorter alternate copy when the same row renders twice (e.g. mobile vs desktop layout). */
+  descAlt?: string;
 }
 
 export interface WhyMetric {

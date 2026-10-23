@@ -78,7 +78,7 @@ export const siteFaqs: SiteFaqItem[] = [
     icon: 'faqLicenseMove',
     q: 'Can I move my license to a new PC?',
     a: a(
-      'Yes—request an HWID reset in your portal or open a Discord ticket with your order email. Reset limits depend on your plan and recent usage.',
+      'Yes—start an HWID reset from your operator portal or Discord with your order email. How often you can move a key depends on your plan tier and recent resets.',
     ),
   },
   {

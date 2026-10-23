@@ -41,8 +41,8 @@ function cardLabel(product: (typeof productPages)[number]) {
             icon={cardIcon(product)}
             badge={product.badge}
             variant={product.variant}
-            buyLabel="Buy now"
-            viewLabel="View details"
+            buyLabel={`Buy ${product.name} key`}
+            viewLabel={`See ${product.name} modules`}
             maxFeatures={5}
           />
         ))

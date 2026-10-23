@@ -17,6 +17,12 @@ const { post } = Astro.props;
   <p class="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{post.excerpt}</p>
   <div class="mt-4 flex items-center gap-3 text-xs text-muted-foreground">
     <span class="inline-flex items-center gap-1"><Icon name="messageCircle" size={14} /> {post.commentsCount} replies</span>
-    <span class="inline-flex items-center gap-1"><Icon name="arrowRight" size={14} /> Join thread</span>
+    <a
+      class="inline-flex items-center gap-1 text-primary hover:underline"
+      href={`/forum/${post.slug}/`}
+    >
+      <Icon name="arrowRight" size={14} />
+      Open {post.category} thread
+    </a>
   </div>
 </article>

@@ -7,7 +7,7 @@ type Props = Partial<import("astro/types").ComponentProps<typeof AstroImage>> & 
   inferSize?: boolean;
 };
 
-const { class: className, src, alt = "", inferSize = true, ...rest } = Astro.props;
+const { class: className, src, alt, inferSize = true, ...rest } = Astro.props;
 ---
 
 {
