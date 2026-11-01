@@ -1,4 +1,7 @@
 /** Static path redirects (301). Keys are pathname without query/hash. */
+const BF6_HUB = '/products/battlefield-6-cheats/';
+const BF6_COMPLETE = '/products/battlefield-6-cheats/complete/';
+
 export const PATH_REDIRECTS = new Map([
   ['/blog', '/blog/'],
   ['/about', '/about/'],
@@ -8,26 +11,20 @@ export const PATH_REDIRECTS = new Map([
   ['/privacy', '/privacy/'],
   ['/terms', '/terms/'],
   ['/faq', '/faq/'],
-  ['/cheats', '/products/fortnite-cheats/'],
-  ['/cheats/', '/products/fortnite-cheats/'],
-  ['/cheats/lite', '/products/fortnite-cheats/'],
-  ['/cheats/lite/', '/products/fortnite-cheats/'],
-  ['/cheats/pro', '/products/fortnite-cheats/'],
-  ['/cheats/pro/', '/products/fortnite-cheats/'],
-  ['/cheats/elite', '/products/fortnite-cheats/elite/'],
-  ['/cheats/elite/', '/products/fortnite-cheats/elite/'],
-  ['/cheats/compare', '/blog/fortnite-lite-vs-pro/'],
-  ['/cheats/compare/', '/blog/fortnite-lite-vs-pro/'],
-  ['/products/fortnite-cheats/utilities', '/products/fortnite-cheats/utilities/'],
-  ['/products/fortnite-cheats', '/products/fortnite-cheats/'],
-  ['/products/fortnite-cheats/account-recovery', '/products/fortnite-cheats/ugc/'],
-  ['/products/fortnite-cheats/account-recovery/', '/products/fortnite-cheats/ugc/'],
-  ['/products/dota-2-cheats', '/products/fortnite-cheats/'],
-  ['/products/dota-2-cheats/', '/products/fortnite-cheats/'],
-  ['/products/dota-2-cheats/elite', '/products/fortnite-cheats/elite/'],
-  ['/products/dota-2-cheats/elite/', '/products/fortnite-cheats/elite/'],
-  ['/products/dota-2-cheats/utilities', '/products/fortnite-cheats/utilities/'],
-  ['/products/dota-2-cheats/utilities/', '/products/fortnite-cheats/utilities/'],
+  ['/cheats', BF6_HUB],
+  ['/cheats/', BF6_HUB],
+  ['/cheats/lite', BF6_HUB],
+  ['/cheats/lite/', BF6_HUB],
+  ['/cheats/pro', BF6_HUB],
+  ['/cheats/pro/', BF6_HUB],
+  ['/cheats/elite', BF6_COMPLETE],
+  ['/cheats/elite/', BF6_COMPLETE],
+  ['/cheats/compare', '/forum/'],
+  ['/cheats/compare/', '/forum/'],
+  ['/products/fortnite-cheats', BF6_HUB],
+  ['/products/fortnite-cheats/', BF6_HUB],
+  ['/products/dota-2-cheats', BF6_HUB],
+  ['/products/dota-2-cheats/', BF6_HUB],
 ]);
 
 /** Paths that should not receive a forced trailing slash. */

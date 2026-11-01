@@ -1,7 +1,6 @@
 /** Checkout destinations keyed by internal product id. */
 export const CHECKOUT_URLS = {
-  battlefield6:
-    'https://levocheats.com/go/HANIA?to=%2Fbattlefield-6-cheats',
+  battlefield6: 'https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fbf6',
 };
 
 export const CHECKOUT_PATH_REDIRECTS = new Map([

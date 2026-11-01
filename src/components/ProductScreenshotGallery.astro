@@ -26,6 +26,7 @@ const mainSizes = '(min-width: 1024px) 640px, 100vw';
   data-product-gallery
   data-gallery-autoplay={hasThumbs ? 'true' : undefined}
   data-gallery-delay="4500"
+  tabindex={hasThumbs ? 0 : undefined}
 >
   <div class="relative min-w-0 overflow-hidden rounded-xl border border-border bg-muted/20">
     <div class="product-gallery__main cursor-zoom-in overflow-hidden">
@@ -52,6 +53,28 @@ const mainSizes = '(min-width: 1024px) 640px, 100vw';
     >
       Screenshot from the build
     </Badge>
+    {
+      hasThumbs && (
+        <>
+          <button
+            type="button"
+            class="product-gallery__nav product-gallery__nav--prev pointer-events-auto absolute left-2 top-1/2 z-[2] flex size-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white backdrop-blur-sm transition hover:bg-black/70"
+            data-product-gallery-prev
+            aria-label="Previous screenshot"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            class="product-gallery__nav product-gallery__nav--next pointer-events-auto absolute right-2 top-1/2 z-[2] flex size-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/50 text-white backdrop-blur-sm transition hover:bg-black/70"
+            data-product-gallery-next
+            aria-label="Next screenshot"
+          >
+            ›
+          </button>
+        </>
+      )
+    }
   </div>
 
   {
@@ -133,10 +156,14 @@ const mainSizes = '(min-width: 1024px) 640px, 100vw';
       if (root.dataset.galleryBound === 'true') return;
       root.dataset.galleryBound = 'true';
 
-      const main = root.querySelector<HTMLImageElement>('.product-gallery__image');
+      const main =
+        root.querySelector<HTMLImageElement>('.product-gallery__main img') ??
+        root.querySelector<HTMLImageElement>('.product-gallery__image');
       const thumbs = Array.from(
         root.querySelectorAll<HTMLButtonElement>('[data-product-gallery-thumb]'),
       );
+      const prevBtn = root.querySelector<HTMLButtonElement>('[data-product-gallery-prev]');
+      const nextBtn = root.querySelector<HTMLButtonElement>('[data-product-gallery-next]');
       if (!main || !thumbs.length) return;
 
       let activeIndex = 0;
@@ -152,6 +179,28 @@ const mainSizes = '(min-width: 1024px) 640px, 100vw';
           goTo(i);
           restartAutoplay();
         });
+      });
+
+      prevBtn?.addEventListener('click', () => {
+        goTo(activeIndex - 1);
+        restartAutoplay();
+      });
+      nextBtn?.addEventListener('click', () => {
+        goTo(activeIndex + 1);
+        restartAutoplay();
+      });
+
+      root.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          goTo(activeIndex - 1);
+          restartAutoplay();
+        }
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          goTo(activeIndex + 1);
+          restartAutoplay();
+        }
       });
 
       let timer: number | null = null;

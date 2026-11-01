@@ -1,29 +1,29 @@
-# Checkout (same-tab 302 → Zadeyo)
-/go/fortnite  https://zadeyo.com/go/QRH?to=%2Fproducts%2Ffortnite  302
-/go/fortnite/  https://zadeyo.com/go/QRH?to=%2Fproducts%2Ffortnite  302
-/go/skin-changer  https://zadeyo.com/products/skin-changer  302
-/go/skin-changer/  https://zadeyo.com/products/skin-changer  302
-/go/hwid-spoofer  https://zadeyo.com/products/hwid-spoofer  302
-/go/hwid-spoofer/  https://zadeyo.com/products/hwid-spoofer  302
-/go/ugc  https://zadeyo.com/products/ugc  302
-/go/ugc/  https://zadeyo.com/products/ugc  302
+# Checkout (same-tab 302 → Zadeyo affiliate)
+/go/battlefield-6  https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fbf6  302
+/go/battlefield-6/  https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fbf6  302
+/go/fortnite  https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fbf6  302
+/go/fortnite/  https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fbf6  302
+/go/skin-changer  https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fbf6  302
+/go/skin-changer/  https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fbf6  302
+/go/hwid-spoofer  https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fbf6  302
+/go/hwid-spoofer/  https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fbf6  302
+/go/ugc  https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fbf6  302
+/go/ugc/  https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fbf6  302
 
-# Legacy paths
+# Legacy paths → Battlefield 6 site
 /contact  /support/  301
 /contact/  /support/  301
-/cheats  /products/fortnite-cheats/  301
-/cheats/  /products/fortnite-cheats/  301
-/cheats/lite  /products/fortnite-cheats/  301
-/cheats/lite/  /products/fortnite-cheats/  301
-/cheats/pro  /products/fortnite-cheats/  301
-/cheats/pro/  /products/fortnite-cheats/  301
-/cheats/elite  /products/fortnite-cheats/elite/  301
-/cheats/elite/  /products/fortnite-cheats/elite/  301
-/cheats/compare  /blog/fortnite-lite-vs-pro/  301
-/cheats/compare/  /blog/fortnite-lite-vs-pro/  301
-/products/dota-2-cheats  /products/fortnite-cheats/  301
-/products/dota-2-cheats/  /products/fortnite-cheats/  301
-/products/dota-2-cheats/elite  /products/fortnite-cheats/elite/  301
-/products/dota-2-cheats/elite/  /products/fortnite-cheats/elite/  301
-/products/dota-2-cheats/utilities  /products/fortnite-cheats/utilities/  301
-/products/dota-2-cheats/utilities/  /products/fortnite-cheats/utilities/  301
+/cheats  /products/battlefield-6-cheats/  301
+/cheats/  /products/battlefield-6-cheats/  301
+/cheats/lite  /products/battlefield-6-cheats/  301
+/cheats/lite/  /products/battlefield-6-cheats/  301
+/cheats/pro  /products/battlefield-6-cheats/  301
+/cheats/pro/  /products/battlefield-6-cheats/  301
+/cheats/elite  /products/battlefield-6-cheats/complete/  301
+/cheats/elite/  /products/battlefield-6-cheats/complete/  301
+/cheats/compare  /forum/  301
+/cheats/compare/  /forum/  301
+/products/dota-2-cheats  /products/battlefield-6-cheats/  301
+/products/dota-2-cheats/  /products/battlefield-6-cheats/  301
+/products/fortnite-cheats  /products/battlefield-6-cheats/  301
+/products/fortnite-cheats/  /products/battlefield-6-cheats/  301
