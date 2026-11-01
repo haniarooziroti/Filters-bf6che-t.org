@@ -30,6 +30,15 @@ function ensureYouTubeApi(): Promise<void> {
   });
 }
 
+type HeroPlayer = {
+  getCurrentTime: () => number;
+  getPlayerState: () => number;
+  seekTo: (s: number, a: boolean) => void;
+  playVideo: () => void;
+  pauseVideo: () => void;
+  destroy?: () => void;
+};
+
 export function initHeroVideos() {
   document.querySelectorAll<HTMLElement>('[data-hero-video]').forEach((root) => {
     if (root.dataset.heroBound === '1') return;
@@ -41,16 +50,42 @@ export function initHeroVideos() {
     const mount = root.querySelector<HTMLElement>('[data-hero-yt-mount]');
     const scrub = root.querySelector<HTMLInputElement>('[data-hero-scrub]');
     const timeEl = root.querySelector<HTMLElement>('[data-hero-time]');
-    if (!videoId || !mount || !scrub || !timeEl) return;
+    const toggleBtn = root.querySelector<HTMLButtonElement>('[data-hero-toggle]');
+    if (!videoId || !mount || !scrub || !timeEl || !toggleBtn) return;
 
     const clipLen = Math.max(1, clipEnd - clipStart);
-    let player: { getCurrentTime: () => number; seekTo: (s: number, a: boolean) => void; playVideo: () => void; destroy?: () => void } | undefined;
+    let player: HeroPlayer | undefined;
     let scrubbing = false;
+    let userStarted = false;
+
+    const isPlaying = () =>
+      player && typeof player.getPlayerState === 'function' && player.getPlayerState() === window.YT.PlayerState.PLAYING;
+
+    const setToggleUi = (playing: boolean) => {
+      toggleBtn.setAttribute('aria-label', playing ? 'Pause hero video' : 'Play hero video');
+      toggleBtn.dataset.state = playing ? 'playing' : 'paused';
+    };
 
     const syncUi = (current: number) => {
       const local = Math.min(clipLen, Math.max(0, current - clipStart));
       scrub.value = String(Math.round((local / clipLen) * 1000));
       timeEl.textContent = `${formatTime(local)} / ${formatTime(clipLen)}`;
+    };
+
+    const pauseAtStart = () => {
+      if (!player) return;
+      player.seekTo(clipStart, true);
+      player.pauseVideo();
+      syncUi(clipStart);
+      setToggleUi(false);
+    };
+
+    const playClip = () => {
+      if (!player) return;
+      userStarted = true;
+      player.seekTo(clipStart, true);
+      player.playVideo();
+      setToggleUi(true);
     };
 
     void ensureYouTubeApi().then(() => {
@@ -59,7 +94,7 @@ export function initHeroVideos() {
         width: '100%',
         height: '100%',
         playerVars: {
-          autoplay: 1,
+          autoplay: 0,
           mute: 1,
           controls: 0,
           rel: 0,
@@ -77,12 +112,16 @@ export function initHeroVideos() {
         events: {
           onReady: (e) => {
             e.target.mute();
-            e.target.seekTo(clipStart, true);
-            e.target.playVideo();
-            syncUi(clipStart);
+            pauseAtStart();
           },
           onStateChange: (e) => {
-            if (e.data === window.YT.PlayerState.ENDED) {
+            if (e.data === window.YT.PlayerState.PLAYING) {
+              setToggleUi(true);
+            }
+            if (e.data === window.YT.PlayerState.PAUSED) {
+              setToggleUi(false);
+            }
+            if (e.data === window.YT.PlayerState.ENDED && userStarted) {
               e.target.seekTo(clipStart, true);
               e.target.playVideo();
             }
@@ -93,6 +132,7 @@ export function initHeroVideos() {
 
     const tick = window.setInterval(() => {
       if (!player || scrubbing || typeof player.getCurrentTime !== 'function') return;
+      if (!isPlaying()) return;
       const t = player.getCurrentTime();
       if (t >= clipEnd - 0.2) {
         player.seekTo(clipStart, true);
@@ -100,6 +140,16 @@ export function initHeroVideos() {
       }
       syncUi(t);
     }, 250);
+
+    toggleBtn.addEventListener('click', () => {
+      if (!player) return;
+      if (isPlaying()) {
+        player.pauseVideo();
+        setToggleUi(false);
+      } else {
+        playClip();
+      }
+    });
 
     scrub.addEventListener('pointerdown', () => {
       scrubbing = true;
@@ -109,10 +159,12 @@ export function initHeroVideos() {
     });
     scrub.addEventListener('input', () => {
       if (!player || typeof player.seekTo !== 'function') return;
+      userStarted = true;
       const ratio = Number(scrub.value) / 1000;
       const target = clipStart + ratio * clipLen;
       player.seekTo(target, true);
       player.playVideo();
+      setToggleUi(true);
       syncUi(target);
     });
 
@@ -130,7 +182,10 @@ export function initHeroVideos() {
 declare global {
   interface Window {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    YT: { Player: new (el: HTMLElement, opts: Record<string, unknown>) => any };
+    YT: {
+      Player: new (el: HTMLElement, opts: Record<string, unknown>) => any;
+      PlayerState: { PLAYING: number; PAUSED: number; ENDED: number };
+    };
     onYouTubeIframeAPIReady?: () => void;
   }
 }

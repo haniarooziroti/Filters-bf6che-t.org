@@ -57,6 +57,8 @@ function encodeIco(pngBuffers) {
 const files = {
   'favicon-16.png': 16,
   'favicon-32.png': 32,
+  'favicon-48.png': 48,
+  'favicon-192.png': 192,
   'apple-touch-icon.png': 180,
   'favicon-512.png': 512,
 };
@@ -74,7 +76,7 @@ console.log('wrote favicon.ico', ico.length);
 const png128 = await png(128);
 const b64 = png128.toString('base64');
 const svg = [
-  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Fortnite Cheats">',
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Battlefield 6 Hacks">',
   `  <image href="data:image/png;base64,${b64}" width="128" height="128" />`,
   '</svg>',
   '',

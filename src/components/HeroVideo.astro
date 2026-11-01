@@ -1,5 +1,5 @@
 ---
-/** YouTube clip fSWWc_odAZk — 0:17–0:28, custom scrub bar only (no skip/pause overlay). */
+/** YouTube clip fSWWc_odAZk — 0:17–0:28; user must press play (no autoplay). */
 const videoId = 'fSWWc_odAZk';
 const clipStart = 17;
 const clipEnd = 28;
@@ -16,6 +16,17 @@ const clipDuration = clipEnd - clipStart;
   <div class="hero-video__player absolute left-1/2 top-1/2 h-[135%] w-[135%] max-w-none -translate-x-1/2 -translate-y-1/2" data-hero-yt-mount></div>
 
   <div class="hero-video__shield absolute inset-0 z-[5] cursor-default" aria-hidden="true"></div>
+
+  <button
+    type="button"
+    class="hero-video__toggle absolute left-1/2 top-1/2 z-[8] flex size-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/55 text-white shadow-lg backdrop-blur-sm transition hover:bg-black/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+    data-hero-toggle
+    data-state="paused"
+    aria-label="Play hero video"
+  >
+    <span class="hero-video__icon hero-video__icon--play" aria-hidden="true"></span>
+    <span class="hero-video__icon hero-video__icon--pause" aria-hidden="true"></span>
+  </button>
 
   <div
     class="pointer-events-none absolute inset-0 z-[6] bg-primary/20 mix-blend-soft-light"
@@ -51,5 +62,43 @@ const clipDuration = clipEnd - clipStart;
 <style>
   .hero-video__shield {
     background: transparent;
+  }
+
+  .hero-video__player :global(iframe) {
+    pointer-events: none;
+  }
+
+  .hero-video__icon--play {
+    display: block;
+    width: 0;
+    height: 0;
+    margin-left: 4px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 16px solid currentColor;
+  }
+
+  .hero-video__icon--pause {
+    display: none;
+    width: 14px;
+    height: 16px;
+    border-left: 5px solid currentColor;
+    border-right: 5px solid currentColor;
+  }
+
+  .hero-video__toggle[data-state='playing'] .hero-video__icon--play {
+    display: none;
+  }
+
+  .hero-video__toggle[data-state='playing'] .hero-video__icon--pause {
+    display: block;
+  }
+
+  .hero-video__toggle[data-state='paused'] .hero-video__icon--pause {
+    display: none;
+  }
+
+  .hero-video__toggle[data-state='paused'] .hero-video__icon--play {
+    display: block;
   }
 </style>
