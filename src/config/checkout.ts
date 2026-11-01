@@ -12,15 +12,20 @@ export const CHECKOUT_SLUG_TO_PRODUCT = Object.fromEntries(
   Object.entries(CHECKOUT_SLUGS).map(([product, slug]) => [slug, product as CheckoutProduct]),
 ) as Record<string, CheckoutProduct>;
 
-/** Internal checkout path — middleware 302 to affiliate, same tab. */
+/** Direct Zadeyo affiliate checkout — use on all purchase buttons and CTAs. */
+export function affiliateCheckoutUrl(product: CheckoutProduct = 'battlefield6'): string {
+  return CHECKOUT[product];
+}
+
+export const PRIMARY_CHECKOUT_PATH = affiliateCheckoutUrl('battlefield6');
+
+/** Internal path; middleware and `_redirects` 302 to affiliate (blog / legacy links). */
 export function checkoutPath(product: CheckoutProduct = 'battlefield6'): string {
   return `/go/${CHECKOUT_SLUGS[product]}/`;
 }
 
-export const PRIMARY_CHECKOUT_PATH = checkoutPath('battlefield6');
-
 export function checkoutForSlug(_slug: string): string {
-  return checkoutPath('battlefield6');
+  return affiliateCheckoutUrl('battlefield6');
 }
 
 export function resolveCheckoutHref(href: string): string {
@@ -30,9 +35,9 @@ export function resolveCheckoutHref(href: string): string {
 
   for (const [product, url] of Object.entries(CHECKOUT) as [CheckoutProduct, string][]) {
     if (href === url || href.startsWith(`${url}?`) || href.startsWith(`${url}/`)) {
-      return checkoutPath(product);
+      return affiliateCheckoutUrl(product);
     }
   }
 
-  return checkoutPath('battlefield6');
+  return affiliateCheckoutUrl('battlefield6');
 }

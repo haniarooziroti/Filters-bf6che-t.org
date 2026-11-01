@@ -1,5 +1,5 @@
 import { t } from '../i18n';
-import { checkoutForSlug, checkoutPath } from '../config/checkout';
+import { checkoutForSlug } from '../config/checkout';
 import { PRODUCT_BASE } from '../config/site';
 import type { IconName } from '../components/icons/types';
 
@@ -419,5 +419,5 @@ export const productHub = {
   subtitle: t.products.subtitle,
   description:
     'Battlefield 6 cheats for PC: Complete suite, Aimbot, and ESP / wallhack plans with config saves for Conquest and Breakthrough.',
-  buyUrl: checkoutPath('battlefield6'),
+  buyUrl: checkoutForSlug('battlefield-6-cheats'),
 };
