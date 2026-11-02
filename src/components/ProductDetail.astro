@@ -14,15 +14,21 @@ import ProductFeaturesSection from './product/ProductFeaturesSection.astro';
 import ProductDescriptionSection from './product/ProductDescriptionSection.astro';
 import ProductExperienceSection from './product/ProductExperienceSection.astro';
 import ProductRelatedForumSection from './product/ProductRelatedForumSection.astro';
+import BlogShareBar from './BlogShareBar.astro';
 
 interface Props {
   product: ProductPage;
   breadcrumbs?: BreadcrumbItem[];
+  showShareBar?: boolean;
+  shareTitle?: string;
+  sharePath?: string;
 }
 
-const { product, breadcrumbs } = Astro.props;
+const { product, breadcrumbs, showShareBar = false, shareTitle, sharePath } = Astro.props;
 const productFaqs = getProductFaqs(product.slug, product.kind);
 const relatedPosts = getRelatedForumPosts(product.relatedForumSlugs, 6);
+
+const galleryAltPrefix = product.slug === 'complete' ? 'Complete – ' : '';
 
 const descriptionBlocks = [
   ...product.overview.paragraphs.map((text) => ({ type: 'p' as const, text })),
@@ -40,10 +46,21 @@ const showDescToggle = descriptionBlocks.length > 2;
 
     <div class="mt-6">
       <ProductDetailHeader product={product} />
+      {
+        showShareBar && sharePath && (
+          <div class="mt-4">
+            <BlogShareBar title={shareTitle ?? product.title} path={sharePath} />
+          </div>
+        )
+      }
     </div>
 
     <div class="product-detail-hero__grid mt-10 grid items-start gap-8">
-      <ProductScreenshotGallery images={product.images} id={`gallery-${product.slug}`} />
+      <ProductScreenshotGallery
+        images={product.images}
+        id={`gallery-${product.slug}`}
+        mainImageAltPrefix={galleryAltPrefix}
+      />
       <ProductCheckoutPanel product={product} />
     </div>
   </div>

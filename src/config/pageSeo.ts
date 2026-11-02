@@ -55,19 +55,19 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       'Terms for buying Battlefield 6 cheats on battlefield6hacks.net — license use, delivery, refunds and account risk on PC.',
   },
   '/privacy/': {
-    title: 'Privacy Policy | Battlefield 6 Cheats Site',
+    title: 'Privacy – cookies and contact data when you browse',
     description:
-      'How battlefield6hacks.net uses analytics, cookies and contact data when you browse Battlefield 6 cheat pages.',
+      'Privacy: How battlefield6hacks.net uses analytics, cookies and contact data when you browse Battlefield 6 cheat pages on this site.',
   },
   '/about/': {
-    title: 'About | Battlefield 6 PC Cheats & Modules',
+    title: 'Battlefield 6 – forums and checkout paths for PC players',
     description:
-      'About this Battlefield 6 resource — aimbot, ESP, wallhack feature breakdowns, forums and checkout paths for PC players.',
+      'About this Battlefield 6 resource — aimbot, ESP, wallhack feature breakdowns, forums and checkout paths for PC players on Windows EA App & Steam.',
   },
   '/support/': {
     title: 'Battlefield 6 Cheats Support | Loader & Checkout Help',
     description:
-      'Battlefield 6 cheats support for loader setup, aimbot and ESP configs, license resets and checkout questions on PC.',
+      'Support: Battlefield 6 cheats help for loader setup, aimbot and ESP configs, license resets, checkout questions, and PC account troubleshooting.',
   },
 };
 

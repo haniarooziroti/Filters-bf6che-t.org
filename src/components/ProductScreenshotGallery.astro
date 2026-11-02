@@ -12,11 +12,13 @@ import { Badge } from '@/components/starwind/badge';
 interface Props {
   images: ProductSlide[];
   id?: string;
+  mainImageAltPrefix?: string;
 }
 
-const { images, id = 'product-screenshots' } = Astro.props;
+const { images, id = 'product-screenshots', mainImageAltPrefix = '' } = Astro.props;
 const hasThumbs = images.length > 1;
 const first = images[0];
+const mainAlt = first ? `${mainImageAltPrefix}${first.alt}` : '';
 const mainSizes = '(min-width: 1024px) 640px, 100vw';
 ---
 
@@ -34,7 +36,7 @@ const mainSizes = '(min-width: 1024px) 640px, 100vw';
         first && (
           <ResponsiveImage
             src={first.src}
-            alt={first.alt}
+            alt={mainAlt}
             width={960}
             height={540}
             loading="eager"

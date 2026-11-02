@@ -42,6 +42,10 @@ const c = t.support;
       <p class="section-header__subtitle">{c.subtitle}</p>
     </header>
 
+    {headingLevel === 1 && (
+      <h2 class="mb-6 text-xl font-semibold normal-case">Support: contact channels</h2>
+    )}
+
     <ul class="support-section__cards">
       {
         c.channels.map((channel) => (
@@ -77,7 +81,7 @@ const c = t.support;
     {
       showTicketTips && (
         <div class="support-section__tips">
-          <h3 class="support-section__tips-title">{c.ticketTitle}</h3>
+          <h2 class="support-section__tips-title">Support: {c.ticketTitle}</h2>
           <ul class="support-section__tips-list">
             {c.ticketItems.map((item) => (
               <li class="support-section__tips-item">

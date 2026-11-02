@@ -13,6 +13,7 @@ const content = t.legalPages.about;
 <BaseLayout
   title={seo.title}
   description={seo.description}
+  logoAlt="Battlefield 6 Hacks logo"
   jsonLd={[
     organizationSchema(),
     webPageSchema({
@@ -21,7 +22,7 @@ const content = t.legalPages.about;
       url: '/about/',
     }),
     breadcrumbSchema([
-      { name: 'Home', path: '/' },
+      { name: 'Homepage', path: '/' },
       { name: 'About', path: '/about/' },
     ]),
   ]}
@@ -31,5 +32,7 @@ const content = t.legalPages.about;
     description={content.description}
     breadcrumbLabel="About"
     sections={content.sections}
+    shareTitle={seo.title}
+    sharePath="/about/"
   />
 </BaseLayout>

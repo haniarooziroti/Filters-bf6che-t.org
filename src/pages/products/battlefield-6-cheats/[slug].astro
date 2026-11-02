@@ -24,8 +24,8 @@ const metaDescription =
   seoEntry?.description ??
   `Battlefield 6 cheats for PC — ${product.desc}`;
 const breadcrumbs = [
-  { name: 'Home', path: '/' },
-  { name: 'Products', path: productHub.path },
+  { name: 'Homepage', path: '/' },
+  { name: 'Product hub', path: productHub.path },
   { name: product.title, path: pagePath },
 ];
 ---
@@ -45,5 +45,5 @@ const breadcrumbs = [
     breadcrumbSchema(breadcrumbs),
   ]}
 >
-  <ProductDetail product={product} breadcrumbs={breadcrumbs} />
+  <ProductDetail product={product} breadcrumbs={breadcrumbs} showShareBar={product.slug === 'complete'} shareTitle={metaTitle} sharePath={pagePath} />
 </BaseLayout>

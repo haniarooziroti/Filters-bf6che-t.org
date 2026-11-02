@@ -402,7 +402,7 @@ export const en: Translations = {
   },
   support: {
     eyebrow: 'Support',
-    title: 'Battlefield 6 Hacks support',
+    title: 'Battlefield 6 cheats support – loader, checkout & help',
     subtitle: 'Loader, checkout, and account help for PC players.',
     channels: [
       {
@@ -498,59 +498,77 @@ export const en: Translations = {
   },
   legalPages: {
     about: {
-      title: 'About Battlefield 6 Hacks | PC Aimbot & ESP',
+      title: 'About Battlefield 6 Hacks – PC cheats, modules & guides',
       description:
-        'About Battlefield 6 Hacks — PC Battlefield 6 cheats (aimbot, ESP, wallhack), plans, and guides at battlefield6hacks.net.',
+        'We publish tier comparisons, setup notes, and live status for PC players comparing aimbot, ESP, and wallhack modules before checkout.',
       sections: [
         {
-          heading: 'Who we are',
+          heading: 'Battlefield 6: Who we are',
           paragraphs: [
-            'Battlefield 6 Hacks is a PC site for Battlefield 6 aimbot, ESP, wallhack, vehicle ESP, and radar products. We publish tier comparisons, setup notes, and live status updates.',
-            'Game and product names are for identification only.',
+            'Battlefield 6 Hacks is an independent PC resource for aimbot, ESP, wallhack, vehicle tags, and radar products tied to EA’s large-scale shooter. We explain what each plan includes, how the loader works, and where to check live status before you queue.',
+            'Product and game names on this site are for identification only. We do not represent EA, DICE, or any game publisher.',
           ],
         },
         {
           heading: 'What we offer',
           paragraphs: [
-            'Complete, Aimbot, and ESP & Wallhack plans for Battlefield 6 on Windows. The forums and FAQ cover configs, patch checks, and loader updates.',
-            'Pages are updated when Battlefield 6 or the loader changes. Check the homepage status banner and Discord #status before you play.',
+            'Complete, Aimbot, and ESP & Wallhack tiers cover different module sets on Windows 10 and 11. The forums and FAQ walk through configs, patch-day checks, and conservative presets for Conquest, Breakthrough, Rush, and REDSEC.',
+            'Pages refresh when the loader or anti-cheat landscape changes. Always read the homepage status banner and Discord #status before you launch a session.',
+          ],
+        },
+        {
+          heading: 'How we stay accurate',
+          paragraphs: [
+            'Module lists on each product page mirror what the operator portal ships today—not outdated forum screenshots. When a patch lands, we update compatibility notes and link to setup threads that match the current build.',
+            'If something on the site disagrees with your portal download, treat the portal as source of truth and open a support ticket with your order email.',
           ],
         },
         {
           heading: 'Support',
           paragraphs: [
-            'Use Discord or email for loader errors, compatibility, and checkout questions. Include your order email, platform (EA App or Steam), and Windows version.',
+            'Use Discord or email for loader errors, compatibility, and checkout questions. Include your order email, platform (EA App or Steam), and Windows version so staff can reproduce the issue quickly.',
           ],
         },
       ],
     },
     privacy: {
-      title: 'Privacy Policy | Battlefield 6 Hacks',
+      title: 'Privacy – Battlefield 6 cheats site policy',
       description:
-        'How the Battlefield 6 Hacks shop at battlefield6hacks.net handles analytics, cookies, and contact data.',
+        'This privacy overview explains how battlefield6hacks.net handles analytics, cookies, contact messages, and checkout referrals when you browse cheat product pages.',
       sections: [
         {
-          heading: 'Information we collect',
+          heading: 'Privacy: Information we collect',
           paragraphs: [
-            'We may collect basic analytics such as page views, device type, browser, and approximate region through Google Analytics when it is enabled. Checkout runs on external pages. We do not store payment card data on battlefield6hacks.net.',
+            'We may collect basic analytics such as page views, device type, browser, and approximate region through Google Analytics when it is enabled. Checkout runs on external pages operated by the seller. We do not store payment card numbers on battlefield6hacks.net.',
+            'If you email support, we keep the address and message content until your ticket is resolved. Privacy-related requests should mention the email you used so we can locate prior threads.',
           ],
         },
         {
-          heading: 'How we use data',
+          heading: 'Privacy: How we use data',
           paragraphs: [
-            'Analytics show which product pages people use so we can fix broken links and improve content. Support tickets keep the email and message you send until the issue is closed.',
+            'Analytics show which product pages people use so we can fix broken links and improve content. We do not sell personal data or share it with ad networks beyond standard analytics processors configured in our privacy settings.',
+            'Support tickets are used only to answer loader, license, and checkout questions. Delete requests are handled manually—see the section below on retention.',
           ],
         },
         {
-          heading: 'Cookies',
+          heading: 'Privacy: Cookies and similar tech',
           paragraphs: [
-            'We use basic analytics cookies. You can block cookies in your browser. The site still works without them.',
+            'We use basic analytics cookies to understand traffic patterns. You can block cookies in your browser; core pages remain readable without them.',
+            'Third-party checkout pages may set their own cookies when you leave this site to complete a purchase. Review their privacy notices before paying.',
           ],
         },
         {
-          heading: 'Support',
+          heading: 'Privacy: Your choices and retention',
           paragraphs: [
-            'For privacy questions, use the Support page. Purchase and refund rules are in Terms & Conditions.',
+            'You can opt out of analytics by using browser privacy modes or blocking Google Analytics. For privacy questions about data we hold, contact us through the Support page with the subject line “Privacy request”.',
+            'Analytics logs rotate on the provider’s schedule. Support emails are kept for a reasonable period after closure, then archived or deleted unless law requires longer retention.',
+          ],
+        },
+        {
+          heading: 'Privacy: Policy updates',
+          paragraphs: [
+            'We may revise this privacy policy when tooling or checkout partners change. Material updates will be reflected on this page; continued use of the site after changes means you accept the revised privacy terms.',
+            'Purchase and refund rules remain in Terms & Conditions. For billing disputes, use Support rather than this privacy page.',
           ],
         },
       ],
