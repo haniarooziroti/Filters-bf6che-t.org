@@ -12,7 +12,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/products/battlefield-6-cheats/': {
     title: 'Cheats – Battlefield 6 Complete, Aimbot & ESP Plans',
     description:
-      'Cheats for Battlefield 6: Complete suite (29 modules), Aimbot-only, or ESP wallhack. Compare features, pricing from $15/week, and checkout on PC.',
+      'Compare Battlefield 6 cheat tiers: 29-module Complete suite, Aimbot-only, or ESP wallhack. Pricing, setup steps, plan table, and FAQs before checkout on PC.',
   },
   '/products/battlefield-6-cheats/complete/': {
     title: 'Battlefield 6 Complete Cheats | Full Aimbot & ESP Suite',
@@ -62,12 +62,12 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/about/': {
     title: 'Battlefield 6 – forums and checkout paths for PC players',
     description:
-      'About this Battlefield 6 resource — aimbot, ESP, wallhack feature breakdowns, forums and checkout paths for PC players on Windows EA App & Steam.',
+      'About this Battlefield 6 resource: aimbot and ESP module guides, forum threads, checkout paths, plan comparisons, and FAQs for PC players on Windows.',
   },
   '/support/': {
     title: 'Battlefield 6 Cheats Support | Loader & Checkout Help',
     description:
-      'Support: Battlefield 6 cheats help for loader setup, aimbot and ESP configs, license resets, checkout questions, and PC account troubleshooting.',
+      'Support for Battlefield 6 cheats: loader setup, HWID resets, billing help, ticket checklist, and FAQs. Email and Discord help for PC players after checkout.',
   },
 };
 

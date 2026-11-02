@@ -11,8 +11,12 @@ import CatalogCard from '../../../components/CatalogCard.astro';
 import ProductDurationCards from '../../../components/ProductDurationCards.astro';
 import { productPath } from '../../../utils/path';
 import BlogShareBar from '../../../components/BlogShareBar.astro';
+import PageSeoExpansion from '../../../components/PageSeoExpansion.astro';
+import { productHubExpansion, expansionFaqsToSchema } from '../../../data/pageExpansions';
+import { faqPageSchema } from '../../../utils/schema';
 
 const seo = resolvePageSeo('/products/battlefield-6-cheats/');
+const hubFaqs = expansionFaqsToSchema(productHubExpansion.faqs);
 const breadcrumbs = [
   { name: 'Homepage', path: '/' },
   { name: 'Product hub', path: productHub.path },
@@ -50,6 +54,7 @@ function cardLabel(product: (typeof productPages)[number]) {
         url: productPath(product.slug),
       })),
     ),
+    faqPageSchema(hubFaqs),
   ]}
 >
   <section class="py-8 md:py-12">
@@ -87,4 +92,15 @@ function cardLabel(product: (typeof productPages)[number]) {
   </section>
 
   <ProductDurationCards />
+
+  <PageSeoExpansion
+    sections={productHubExpansion.sections}
+    table={productHubExpansion.table}
+    faqs={productHubExpansion.faqs}
+    faqHeading="Plans FAQ"
+    faqSubtitle="Compatibility, checkout, updates, and risk—answered before you pick a tier."
+    trustHeading={productHubExpansion.trustHeading}
+    trustItems={productHubExpansion.trustItems}
+    cta={productHubExpansion.cta}
+  />
 </BaseLayout>
