@@ -56,7 +56,7 @@
 }
 
 html.dark .section-header__subtitle {
-  color: rgb(163 163 163);
+  color: var(--text-muted);
 }
 
 @media (min-width: 1024px) {
@@ -119,18 +119,18 @@ html::-webkit-scrollbar,
 
 html.dark #hero .hero-bg-dim {
   background:
-    radial-gradient(ellipse 80% 55% at 50% 0%, rgba(45, 110, 226, 0.18), transparent 65%),
+    radial-gradient(ellipse 80% 55% at 50% 0%, color-mix(in oklch, var(--primary) 18%, transparent), transparent 65%),
     linear-gradient(
       180deg,
-      color-mix(in srgb, var(--surface-top) 65%, transparent) 0%,
-      color-mix(in srgb, var(--surface-transition) 35%, transparent) 40%,
+      color-mix(in srgb, var(--bg) 65%, transparent) 0%,
+      color-mix(in srgb, var(--muted) 35%, transparent) 40%,
       transparent 55%
     );
 }
 
 html:not(.dark) #hero .hero-bg-dim {
   background:
-    radial-gradient(ellipse 80% 55% at 50% 0%, rgba(45, 110, 226, 0.1), transparent 65%),
+    radial-gradient(ellipse 80% 55% at 50% 0%, color-mix(in oklch, var(--primary) 10%, transparent), transparent 65%),
     linear-gradient(180deg, rgba(245, 247, 250, 0.4) 0%, transparent 55%);
 }
 
@@ -244,7 +244,7 @@ html.dark .text-primary.icon-app,
 html.dark .text-primary .icon-app,
 html.dark [class*='text-primary'] > .icon-app,
 html.dark .icon-app.text-primary {
-  color: #2d6ee2 !important;
+  color: var(--primary) !important;
 }
 
 :is(a, button)[data-variant='primary']:hover .icon-app,
@@ -778,20 +778,10 @@ html:not(.dark) .deployment-cta-secondary:hover {
 .why-compare-us-card {
   background: linear-gradient(
     180deg,
-    color-mix(in srgb, #2d6ee2 22%, #12161f) 0%,
-    color-mix(in srgb, #2d6ee2 12%, #12161f) 28%,
-    color-mix(in srgb, #2d6ee2 5%, #12161f) 55%,
-    #12161f 100%
-  );
-}
-
-html.dark .why-compare-us-card {
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, #2d6ee2 22%, var(--surface-variation)) 0%,
-    color-mix(in srgb, #2d6ee2 12%, var(--surface-lower)) 28%,
-    color-mix(in srgb, #2d6ee2 5%, var(--surface-transition)) 55%,
-    var(--surface-lower) 100%
+    color-mix(in oklch, var(--primary) 26%, var(--card)) 0%,
+    color-mix(in oklch, var(--primary) 14%, var(--card)) 28%,
+    color-mix(in oklch, var(--primary) 5%, var(--card)) 55%,
+    var(--card) 100%
   );
 }
 
@@ -813,23 +803,18 @@ html.dark .why-compare-us-card {
 }
 
 /* Matches Starwind CardFooter (`bg-muted/50` + border) for card title bands */
-html.dark .card-title-band {
-  background: color-mix(in srgb, var(--surface-transition) 70%, transparent);
-  border-bottom: 1px solid var(--border);
-}
-
+html.dark .card-title-band,
 html.dark .card-footer-band {
-  background: color-mix(in srgb, var(--surface-transition) 70%, transparent);
-  border-top: 1px solid var(--border);
+  background: color-mix(in oklch, var(--muted) 50%, transparent);
 }
 
 .card-title-band {
-  background: color-mix(in srgb, #161a24 70%, transparent);
+  background: color-mix(in srgb, var(--muted) 50%, transparent);
   border-bottom: 1px solid var(--border);
 }
 
 .card-footer-band {
-  background: color-mix(in srgb, #161a24 70%, transparent);
+  background: color-mix(in srgb, var(--muted) 50%, transparent);
   border-top: 1px solid var(--border);
 }
 
@@ -838,26 +823,19 @@ html:not(.dark) .card-footer-band {
   background: color-mix(in srgb, var(--muted) 50%, transparent);
 }
 
-/* Dark page shell — top → transition → lower (matches surface palette) */
+/* Dark page shell — flat reference background */
 html.dark,
 html.dark body {
-  background-color: var(--surface-top);
-  background-image: linear-gradient(
-    180deg,
-    var(--surface-top) 0%,
-    var(--surface-transition) 42%,
-    var(--surface-lower) 100%
-  );
-  background-attachment: fixed;
+  background-color: var(--bg);
+  background-image: none;
 }
 
 html.dark .bg-card,
 html.dark [data-slot='card'],
 html.dark [data-sw-card],
 html.dark .features-bento > article {
-  background-color: var(--surface-variation) !important;
+  background-color: var(--surface) !important;
   background-image: none !important;
-  box-shadow: 0 1px 0 color-mix(in srgb, var(--surface-edge) 55%, transparent);
 }
 
 
