@@ -7,7 +7,6 @@ import {
   Sheet,
   SheetContent,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from '@/components/starwind/sheet';
 import Icon from './icons/Icon.astro';
@@ -15,13 +14,13 @@ import SlideRevealButton from './SlideRevealButton.astro';
 
 import type { IconName } from './icons/types';
 
-const navIcons: Record<string, IconName> = {
-  Home: 'layers',
-  Products: 'navProducts',
-  Blog: 'navBlog',
-  Forums: 'messageCircle',
-  Reviews: 'users',
-  FAQ: 'navFaq',
+const navIconByHref: Record<string, IconName> = {
+  '/': 'layers',
+  '/products/battlefield-6-cheats/': 'navProducts',
+  '/blog/': 'navBlog',
+  '/forum/': 'messageCircle',
+  '/reviews/': 'users',
+  '/faq/': 'navFaq',
 };
 
 const purchaseUrl = PRIMARY_CHECKOUT_PATH;
@@ -45,7 +44,7 @@ const affiliateRel = 'noopener noreferrer sponsored';
           data-nav-link
           {...(link.scrollTarget ? { 'data-scroll-target': link.scrollTarget } : {})}
         >
-          <Icon name={navIcons[link.label] ?? 'navFeatures'} size={15} class="hidden shrink-0 xl:inline" />
+          <Icon name={navIconByHref[link.href] ?? 'navFeatures'} size={15} class="hidden shrink-0 xl:inline" />
           {link.label}
         </a>
       ))}
@@ -71,7 +70,7 @@ const affiliateRel = 'noopener noreferrer sponsored';
         </SheetTrigger>
         <SheetContent side="right" class="flex w-[min(100vw-2rem,20rem)] flex-col gap-4">
           <SheetHeader>
-            <SheetTitle>{t.site.name}</SheetTitle>
+            <p class="text-lg font-semibold leading-none tracking-tight">{t.site.name}</p>
           </SheetHeader>
           <nav class="flex flex-col gap-1" aria-label="Mobile">
             {t.nav.map((link) => (
@@ -81,8 +80,8 @@ const affiliateRel = 'noopener noreferrer sponsored';
                 data-nav-link
                 {...(link.scrollTarget ? { 'data-scroll-target': link.scrollTarget } : {})}
               >
-                <Icon name={navIcons[link.label] ?? 'navFeatures'} size={15} class="hidden shrink-0 xl:inline" />
-                {link.label}
+                <Icon name={navIconByHref[link.href] ?? 'navFeatures'} size={15} class="shrink-0" />
+                {link.mobileLabel ?? link.label}
               </a>
             ))}
           </nav>

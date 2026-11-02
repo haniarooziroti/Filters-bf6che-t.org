@@ -9,6 +9,8 @@ export interface SiteConfig {
 export interface NavLink {
   href: string;
   label: string;
+  /** Distinct anchor text for the mobile menu (avoids duplicate links vs desktop nav). */
+  mobileLabel?: string;
   ariaLabel?: string;
   /** When the target section exists on the current page, scroll instead of navigating. */
   scrollTarget?: string;

@@ -14,12 +14,12 @@ export const en: Translations = {
     discord: DISCORD_URL,
   },
   nav: [
-    { href: '/', label: 'Home' },
-    { href: `${productBase}`, label: 'Hack plans' },
-    { href: '/blog/', label: 'Guides' },
-    { href: '/forum/', label: 'Discussions' },
-    { href: '/reviews/', label: 'Ratings' },
-    { href: '/faq/', label: 'Q&A' },
+    { href: '/', label: 'Home', mobileLabel: 'Return to homepage' },
+    { href: `${productBase}`, label: 'Hack plans', mobileLabel: 'View hack plans' },
+    { href: '/blog/', label: 'Guides', mobileLabel: 'Read setup guides' },
+    { href: '/forum/', label: 'Discussions', mobileLabel: 'Join player discussions' },
+    { href: '/reviews/', label: 'Ratings', mobileLabel: 'See player ratings' },
+    { href: '/faq/', label: 'Q&A', mobileLabel: 'Open pre-purchase Q&A' },
   ],
   hero: {
     status: 'Battlefield 6 online',

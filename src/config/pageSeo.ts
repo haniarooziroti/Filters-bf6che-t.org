@@ -45,7 +45,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       'Battlefield 6 cheats forum for aimbot settings, ESP layout tips, loader setup and patch-day questions from real PC players.',
   },
   '/faq/': {
-    title: 'FAQ | Battlefield 6 Hacks Setup, Plans & Ban Risk',
+    title: 'FAQ | Battlefield 6 Hacks Setup, Plans & Ban Risk PC',
     description:
       'Battlefield 6 hacks FAQ: Windows requirements, aimbot and ESP basics, $15–$150 plans, HWID reset, loader setup, and what to check after every BF6 patch.',
   },

@@ -101,7 +101,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'esp',
     icon: 'faqEspVsScripts',
     q: 'What is the difference between ESP wallhack and aimbot?',
-    a: `ESP and wallhack are information overlays—they do not move your crosshair. Aimbot modules on ${aimbotTier('Aimbot tier')} and ${completeTier('Complete package')} handle smooth tracking, FOV, and bone priority. You can stay awareness-only on ${espTier('ESP-only plan')}.`,
+    a: `ESP and wallhack are information overlays—they do not move your crosshair. Aimbot modules on ${aimbotTier('Smooth aimbot tier')} and ${completeTier('Complete package')} handle smooth tracking, FOV, and bone priority. You can stay awareness-only on ${espTier('ESP-only plan')}.`,
   },
   {
     id: 'which-tier-esp',
@@ -116,7 +116,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'scripts',
     icon: 'faqWhichTierScripts',
     q: 'Which plan includes aimbot?',
-    a: `${aimbotTier('Aimbot plan page')} ships every aimbot module: smoothness, FOV, bone selection, visible check, team and bot filters, and FOV drawing. ${completeTier('Complete suite')} includes the same aimbot stack plus the full ESP suite. ${espTier('ESP wallhack tier')} has no aimbot.`,
+    a: `${aimbotTier('Aimbot plan page')} ships every aimbot module: smoothness, FOV, bone selection, visible check, team and bot filters, and FOV drawing. ${completeTier('Complete suite')} includes the same aimbot stack plus the full ESP suite. ${espTier('ESP wallhack modules page')} has no aimbot.`,
     scopes: ['aimbot'],
   },
   {
@@ -124,7 +124,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqRankTiers',
     q: 'How do Complete, Aimbot, and ESP / wallhack compare?',
-    a: `Map awareness only → ${espTier('ESP-only tier')}. Infantry tracking without full ESP → ${aimbotTier('Aimbot tier')}. All 29 modules on one key → ${completeTier('Complete tier')}. Compare tables on each product page or the ${faqIndex('FAQ index')}.`,
+    a: `Map awareness only → ${espTier('ESP-only tier')}. Infantry tracking without full ESP → ${aimbotTier('Dedicated Aimbot tier')}. All 29 modules on one key → ${completeTier('Complete tier')}. Compare tables on each product page or the ${faqIndex('FAQ index')}.`,
   },
   {
     id: 'stream-proof',

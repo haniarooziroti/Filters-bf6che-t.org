@@ -52,6 +52,18 @@ const robotsContent = noindex
 <html lang="en" class="dark fonts-pending">
   <head>
     <meta charset="UTF-8" />
+    <style is:inline>
+      @media (max-width: 639px) {
+        :root {
+          --seo-layout-gutter: 1.25rem;
+        }
+      }
+      @media (min-width: 640px) {
+        :root {
+          --seo-layout-gutter: 1.5rem;
+        }
+      }
+    </style>
     <script is:inline>
       (function () {
         try {
@@ -72,7 +84,7 @@ const robotsContent = noindex
     <link rel="canonical" href={canonicalURL} />
     <link rel="alternate" hreflang="en" href={canonicalURL} />
     <link rel="alternate" hreflang="x-default" href={canonicalURL} />
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    <link rel="sitemap" type="text/xml" title="Sitemap" href="/sitemap.xml" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
@@ -133,7 +145,7 @@ const robotsContent = noindex
     <slot name="head" />
 
   </head>
-  <body class="min-h-screen bg-background text-foreground">
+  <body class="min-h-screen bg-background text-foreground seo-responsive-root">
     <button type="button" class="skip-link" data-skip-to-main>{t.ui.skipLink}</button>
     <Header />
     <main id="main-content">

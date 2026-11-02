@@ -227,14 +227,13 @@ for (const child of childFiles) {
   written.push({ name: child.name, lastmod, count: urls.length });
 }
 
-const indexXml = renderIndex(written);
-// GSC entry point: /sitemap.xml is the index (also mirrored as sitemap-index.xml).
-fs.writeFileSync(path.join(dist, 'sitemap.xml'), indexXml, 'utf8');
-fs.writeFileSync(path.join(dist, 'sitemap-index.xml'), indexXml, 'utf8');
-
-// Combined urlset for IndexNow only (not listed in robots.txt).
 const allUrls = childFiles.flatMap((c) => byBucket[c.key]);
-fs.writeFileSync(path.join(dist, 'sitemap-all.xml'), renderUrlset(allUrls), 'utf8');
+const combinedXml = renderUrlset(allUrls);
+
+// Primary robots entry: one urlset (auditors and GSC accept a flat sitemap.xml).
+fs.writeFileSync(path.join(dist, 'sitemap.xml'), combinedXml, 'utf8');
+fs.writeFileSync(path.join(dist, 'sitemap-index.xml'), combinedXml, 'utf8');
+fs.writeFileSync(path.join(dist, 'sitemap-all.xml'), combinedXml, 'utf8');
 
 for (const stale of ['sitemap-0.xml']) {
   const stalePath = path.join(dist, stale);
@@ -245,5 +244,5 @@ console.log(`Sitemap finalized: ${total} URLs`);
 for (const w of written) {
   console.log(`  ${w.name}: ${w.count}`);
 }
-console.log('  sitemap.xml / sitemap-index.xml → index');
-console.log('  sitemap-all.xml → combined urlset (IndexNow only)');
+console.log('  sitemap.xml / sitemap-index.xml → flat urlset');
+console.log('  sitemap-*.xml → optional segment files (text/xml)');
