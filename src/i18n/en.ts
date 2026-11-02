@@ -498,7 +498,7 @@ export const en: Translations = {
   },
   legalPages: {
     about: {
-      title: 'About Battlefield 6 Hacks – PC cheats, modules & guides',
+      title: 'About Battlefield 6 – forums, checkout paths for PC players',
       description:
         'We publish tier comparisons, setup notes, and live status for PC players comparing aimbot, ESP, and wallhack modules before checkout.',
       sections: [
@@ -532,43 +532,43 @@ export const en: Translations = {
       ],
     },
     privacy: {
-      title: 'Privacy – Battlefield 6 cheats site policy',
+      title: 'Privacy – cookies, contact data when you browse',
       description:
-        'This privacy overview explains how battlefield6hacks.net handles analytics, cookies, contact messages, and checkout referrals when you browse cheat product pages.',
+        'Your privacy matters when you browse product pages. This overview explains how battlefield6hacks.net handles analytics, cookies, contact messages, and checkout referrals.',
       sections: [
         {
           heading: 'Privacy: Information we collect',
           paragraphs: [
             'We may collect basic analytics such as page views, device type, browser, and approximate region through Google Analytics when it is enabled. Checkout runs on external pages operated by the seller. We do not store payment card numbers on battlefield6hacks.net.',
-            'If you email support, we keep the address and message content until your ticket is resolved. Privacy-related requests should mention the email you used so we can locate prior threads.',
+            'If you email support, we keep the address and message content until your ticket is resolved. Data-related requests should mention the email you used so we can locate prior threads.',
           ],
         },
         {
-          heading: 'Privacy: How we use data',
+          heading: 'How we use data',
           paragraphs: [
-            'Analytics show which product pages people use so we can fix broken links and improve content. We do not sell personal data or share it with ad networks beyond standard analytics processors configured in our privacy settings.',
+            'Analytics show which product pages people use so we can fix broken links and improve content. We do not sell personal data or share it with ad networks beyond standard analytics processors configured in our account settings.',
             'Support tickets are used only to answer loader, license, and checkout questions. Delete requests are handled manually—see the section below on retention.',
           ],
         },
         {
-          heading: 'Privacy: Cookies and similar tech',
+          heading: 'Cookies and similar tech',
           paragraphs: [
             'We use basic analytics cookies to understand traffic patterns. You can block cookies in your browser; core pages remain readable without them.',
-            'Third-party checkout pages may set their own cookies when you leave this site to complete a purchase. Review their privacy notices before paying.',
+            'Third-party checkout pages may set their own cookies when you leave this site to complete a purchase. Review the seller’s notices before paying.',
           ],
         },
         {
-          heading: 'Privacy: Your choices and retention',
+          heading: 'Your choices and retention',
           paragraphs: [
-            'You can opt out of analytics by using browser privacy modes or blocking Google Analytics. For privacy questions about data we hold, contact us through the Support page with the subject line “Privacy request”.',
+            'You can opt out of analytics by using private browsing modes or blocking Google Analytics. For questions about data we hold, contact us through the Support page with the subject line “Data request”.',
             'Analytics logs rotate on the provider’s schedule. Support emails are kept for a reasonable period after closure, then archived or deleted unless law requires longer retention.',
           ],
         },
         {
-          heading: 'Privacy: Policy updates',
+          heading: 'Policy updates',
           paragraphs: [
-            'We may revise this privacy policy when tooling or checkout partners change. Material updates will be reflected on this page; continued use of the site after changes means you accept the revised privacy terms.',
-            'Purchase and refund rules remain in Terms & Conditions. For billing disputes, use Support rather than this privacy page.',
+            'We may revise this policy when tooling or checkout partners change. Material updates will be reflected on this page; continued use of the site after changes means you accept the revised terms.',
+            'Purchase and refund rules remain in Terms & Conditions. For billing disputes, use Support rather than this page.',
           ],
         },
       ],
