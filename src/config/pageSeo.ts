@@ -12,7 +12,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/products/battlefield-6-cheats/': {
     title: 'Cheats – Battlefield 6 Complete, Aimbot & ESP Plans',
     description:
-      'Compare Battlefield 6 cheat tiers: 29-module Complete suite, Aimbot-only, or ESP wallhack. Pricing, setup steps, plan table, and FAQs before checkout on PC.',
+      'Compare Battlefield 6 cheat tiers: 29-module Complete suite, Aimbot-only, or ESP wallhack. Pricing, setup steps, plan table, and FAQs before checkout on.',
   },
   '/products/battlefield-6-cheats/complete/': {
     title: 'Battlefield 6 Complete Cheats | Full Aimbot & ESP Suite',
@@ -67,7 +67,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/support/': {
     title: 'Battlefield 6 Cheats Support | Loader & Checkout Help',
     description:
-      'Support for Battlefield 6 cheats: loader setup, HWID resets, billing help, ticket checklist, and FAQs. Email and Discord help for PC players after checkout.',
+      'Support for Battlefield 6 cheats: loader setup, HWID resets, billing help, ticket checklist, and FAQs. Email and Discord help for PC players after.',
   },
 };
 
