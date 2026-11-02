@@ -117,10 +117,15 @@ html::-webkit-scrollbar,
   padding-bottom: 4.5rem;
 }
 
-#hero .hero-bg-dim {
+html.dark #hero .hero-bg-dim {
   background:
     radial-gradient(ellipse 80% 55% at 50% 0%, rgba(45, 110, 226, 0.18), transparent 65%),
-    linear-gradient(180deg, rgba(14, 18, 24, 0.4) 0%, transparent 55%);
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--surface-top) 65%, transparent) 0%,
+      color-mix(in srgb, var(--surface-transition) 35%, transparent) 40%,
+      transparent 55%
+    );
 }
 
 html:not(.dark) #hero .hero-bg-dim {
@@ -780,6 +785,16 @@ html:not(.dark) .deployment-cta-secondary:hover {
   );
 }
 
+html.dark .why-compare-us-card {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, #2d6ee2 22%, var(--surface-variation)) 0%,
+    color-mix(in srgb, #2d6ee2 12%, var(--surface-lower)) 28%,
+    color-mix(in srgb, #2d6ee2 5%, var(--surface-transition)) 55%,
+    var(--surface-lower) 100%
+  );
+}
+
 .why-compare-other-card {
   background: var(--card);
 }
@@ -798,6 +813,16 @@ html:not(.dark) .deployment-cta-secondary:hover {
 }
 
 /* Matches Starwind CardFooter (`bg-muted/50` + border) for card title bands */
+html.dark .card-title-band {
+  background: color-mix(in srgb, var(--surface-transition) 70%, transparent);
+  border-bottom: 1px solid var(--border);
+}
+
+html.dark .card-footer-band {
+  background: color-mix(in srgb, var(--surface-transition) 70%, transparent);
+  border-top: 1px solid var(--border);
+}
+
 .card-title-band {
   background: color-mix(in srgb, #161a24 70%, transparent);
   border-bottom: 1px solid var(--border);
@@ -813,18 +838,26 @@ html:not(.dark) .card-footer-band {
   background: color-mix(in srgb, var(--muted) 50%, transparent);
 }
 
-/* Force cool navy surfaces — kill any warm/purple card casts */
+/* Dark page shell — top → transition → lower (matches surface palette) */
 html.dark,
 html.dark body {
-  background-color: #0b1018;
+  background-color: var(--surface-top);
+  background-image: linear-gradient(
+    180deg,
+    var(--surface-top) 0%,
+    var(--surface-transition) 42%,
+    var(--surface-lower) 100%
+  );
+  background-attachment: fixed;
 }
 
 html.dark .bg-card,
 html.dark [data-slot='card'],
 html.dark [data-sw-card],
 html.dark .features-bento > article {
-  background-color: #121a28 !important;
+  background-color: var(--surface-variation) !important;
   background-image: none !important;
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--surface-edge) 55%, transparent);
 }
 
 

@@ -118,21 +118,28 @@
 }
 
 .dark {
-  --background: #0b1018;
+  /* Site surface palette (top → lower page depth) */
+  --surface-top: #0d0a14;
+  --surface-lower: #0f0c18;
+  --surface-transition: #0e0b17;
+  --surface-variation: #0f0c19;
+  --surface-edge: #040306;
+
+  --background: var(--surface-top);
   --foreground: #ffffff;
-  --card: #121a28;
+  --card: var(--surface-variation);
   --card-foreground: #ffffff;
-  --popover: #0c1420;
+  --popover: var(--surface-lower);
   --popover-foreground: #ffffff;
   --primary: #2d6ee2;
   --primary-foreground: #ffffff;
   --primary-accent: #5a8ff0;
-  --secondary: #161a24;
+  --secondary: var(--surface-transition);
   --secondary-foreground: #ffffff;
   --secondary-accent: #ffffff;
-  --muted: #161a24;
+  --muted: var(--surface-transition);
   --muted-foreground: #a8b0c0;
-  --accent: #1a2030;
+  --accent: var(--surface-variation);
   --accent-foreground: #ffffff;
   --info: #5a8ff0;
   --info-foreground: #061428;
@@ -143,18 +150,18 @@
   --warning-foreground: #061428;
   --error: #3b82f6;
   --error-foreground: #ffffff;
-  --border: #1e2533;
-  --input: #243044;
+  --border: color-mix(in srgb, var(--surface-edge) 48%, var(--surface-variation) 52%);
+  --input: color-mix(in srgb, var(--surface-edge) 32%, var(--surface-lower) 68%);
   --outline: #6b7a94;
 
   /* sidebars variables */
-  --sidebar-background: #0c1018;
+  --sidebar-background: var(--surface-top);
   --sidebar-foreground: #ffffff;
   --sidebar-primary: #2d6ee2;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #161a24;
+  --sidebar-accent: var(--surface-transition);
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #1e2533;
+  --sidebar-border: color-mix(in srgb, var(--surface-edge) 48%, var(--surface-variation) 52%);
   --sidebar-outline: #6b7a94;
 }
 
