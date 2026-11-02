@@ -15,17 +15,17 @@ export const en: Translations = {
   },
   nav: [
     { href: '/', label: 'Home' },
-    { href: `${productBase}`, label: 'Products' },
-    { href: '/blog/', label: 'Blog' },
-    { href: '/forum/', label: 'Forums' },
-    { href: '/reviews/', label: 'Reviews' },
-    { href: '/faq/', label: 'FAQ' },
+    { href: `${productBase}`, label: 'Hack plans' },
+    { href: '/blog/', label: 'Guides' },
+    { href: '/forum/', label: 'Discussions' },
+    { href: '/reviews/', label: 'Ratings' },
+    { href: '/faq/', label: 'Q&A' },
   ],
   hero: {
     status: 'Battlefield 6 online',
     eyebrow: 'PC tools for large-scale combat',
     titleLine1: 'Battlefield 6 Hacks',
-    titleLine2: 'Aimbot, ESP and Wallhack',
+    titleLine2: 'Aimbot, ESP, Wallhack & Cheats',
     subtitle:
       'Battlefield 6 hacks built for Conquest, Breakthrough, Rush, and REDSEC—aimbot tuning, ESP wallhack, vehicle tags, and radar so you read pushes and flanks instead of guessing.',
     ctaPrimary: 'Compare hack plans',

@@ -14,8 +14,8 @@ import BlogShareBar from '../../../components/BlogShareBar.astro';
 
 const seo = resolvePageSeo('/products/battlefield-6-cheats/');
 const breadcrumbs = [
-  { name: 'Home', path: '/' },
-  { name: 'Products', path: productHub.path },
+  { name: 'Homepage', path: '/' },
+  { name: 'Product hub', path: productHub.path },
 ];
 
 function cardIcon(product: (typeof productPages)[number]) {
@@ -36,6 +36,7 @@ function cardLabel(product: (typeof productPages)[number]) {
 <BaseLayout
   title={seo.title}
   description={seo.description}
+  logoAlt="Cheats – Battlefield 6 Hacks logo"
   jsonLd={[
     collectionPageSchema({
       name: productHub.title,
@@ -56,12 +57,11 @@ function cardLabel(product: (typeof productPages)[number]) {
       <Breadcrumbs items={breadcrumbs} />
 
       <div class="mt-6 max-w-3xl space-y-3">
-        <h1 class="text-3xl font-bold normal-case md:text-4xl">Battlefield 6 Hacks</h1>
+        <h1 class="text-3xl font-bold normal-case md:text-4xl">Cheats: Battlefield 6 Complete, Aimbot &amp; ESP plans</h1>
         <p class="text-lg text-muted-foreground">
-          Battlefield 6 is a large-scale military shooter built for infantry, vehicles, and squad fights on PC. Our
-          battlefield6 hacks bundle aimbot, ESP wallhack, and 29 configurable modules—pick Complete, Aimbot, or ESP &
-          wallhack and checkout when you are ready.
+          Cheats for Battlefield 6 on PC: our battlefield6 hacks bundle aimbot, ESP wallhack, and 29 configurable modules—pick Complete, Aimbot, or ESP &amp; wallhack and checkout when you are ready.
         </p>
+        <h2 class="text-xl font-semibold normal-case text-foreground">Cheats: compare Battlefield 6 hack plans</h2>
         <p class="text-base text-muted-foreground">{t.products.subtitle}</p>
         <BlogShareBar title={seo.title} path={productHub.path} />
       </div>

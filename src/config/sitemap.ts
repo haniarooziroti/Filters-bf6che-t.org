@@ -1,7 +1,5 @@
 import type { SitemapItem } from '@astrojs/sitemap';
 
-const buildDate = new Date().toISOString();
-
 function pathnameFromUrl(url: string): string {
   const path = new URL(url).pathname;
   return path.endsWith('/') ? path : `${path}/`;
@@ -13,8 +11,6 @@ export function sitemapSerialize(item: SitemapItem): SitemapItem | undefined {
   if (path.includes('/404') || path.startsWith('/go/') || path.includes('/rss.xml')) {
     return undefined;
   }
-
-  item.lastmod = buildDate;
 
   if (path === '/') {
     item.priority = 1;

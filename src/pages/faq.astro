@@ -6,11 +6,12 @@ import { resolvePageSeo } from '../config/seo';
 import { breadcrumbSchema, faqPageSchema, webPageSchema } from '../utils/schema';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import SiteFaqSection from '../components/SiteFaqSection.astro';
+import BlogShareBar from '../components/BlogShareBar.astro';
 
 const seo = resolvePageSeo('/faq/');
 const breadcrumbs = [
-  { name: 'Home', path: '/' },
-  { name: 'FAQ', path: '/faq/' },
+  { name: 'Homepage', path: '/' },
+  { name: 'FAQ index', path: '/faq/' },
 ];
 
 const faqs = getAllFaqs();
@@ -19,6 +20,7 @@ const faqs = getAllFaqs();
 <BaseLayout
   title={seo.title}
   description={seo.description}
+  logoAlt="FAQ – Battlefield 6 Hacks logo"
   jsonLd={[
     webPageSchema({
       name: seo.title,
@@ -34,11 +36,14 @@ const faqs = getAllFaqs();
       <Breadcrumbs items={breadcrumbs} />
       <header class="mx-auto mt-6 max-w-3xl text-center">
         <p class="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Battlefield 6 Hacks</p>
-        <h1 id="faq-page-title" class="mt-3 font-[family-name:var(--font-heading)] text-4xl font-bold uppercase tracking-tight md:text-5xl">
-          FAQ
+        <h1 id="faq-page-title" class="mt-3 font-[family-name:var(--font-heading)] text-3xl font-bold normal-case tracking-tight md:text-4xl">
+          FAQ – Battlefield 6 Hacks setup, plans &amp; ban risk
         </h1>
         <p class="mt-2 text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">All questions</p>
         <p class="mt-4 text-base leading-relaxed text-muted-foreground">{t.faq.subtitle}</p>
+        <div class="mt-6 flex justify-center">
+          <BlogShareBar title={seo.title} path="/faq/" />
+        </div>
       </header>
     </div>
   </section>

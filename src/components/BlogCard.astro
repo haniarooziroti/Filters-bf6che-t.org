@@ -10,9 +10,10 @@ import Icon from './icons/Icon.astro';
 
 interface Props {
   post: BlogEntry;
+  heroAltPrefix?: string;
 }
 
-const { post } = Astro.props;
+const { post, heroAltPrefix } = Astro.props;
 const href = blogPostPath(post.id);
 const heroSrc = resolveBlogHeroSource(post.data.heroImage);
 const readMin = readingMinutes(post.body);
@@ -23,7 +24,7 @@ const readLabel = blogReadGuideLabel(post.id, post.data.title);
   <a href={href} class="block overflow-hidden">
     <ResponsiveImage
       src={heroSrc}
-      alt={post.data.title}
+      alt={heroAltPrefix ? `${heroAltPrefix}${post.data.title}` : post.data.title}
       width={640}
       height={360}
       widths={CARD_IMAGE_WIDTHS}

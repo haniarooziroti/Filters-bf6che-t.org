@@ -28,12 +28,12 @@ function link(text: string, href: string): string {
   return `<a href="${normalizeInternalPath(href)}">${text}</a>`;
 }
 
-const complete = link('Complete plan', productPath('complete'));
-const aimbotPlan = link('Aimbot plan', productPath('aimbot'));
-const espPlan = link('ESP / wallhack plan', productPath('esp-wallhack'));
-const productsHub = link('Battlefield 6 products', ROUTES.products);
-const faqPage = link('full FAQ', ROUTES.faq);
-const forum = link('community forum', ROUTES.forum);
+const completeTier = (label: string) => link(label, productPath('complete'));
+const aimbotTier = (label: string) => link(label, productPath('aimbot'));
+const espTier = (label: string) => link(label, productPath('esp-wallhack'));
+const productsIndex = (label: string) => link(label, ROUTES.products);
+const faqIndex = (label: string) => link(label, ROUTES.faq);
+const forumHub = (label: string) => link(label, ROUTES.forum);
 
 export const siteFaqs: SiteFaqItem[] = [
   {
@@ -86,14 +86,14 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'products',
     icon: 'faqProductsPage',
     q: 'Where are Battlefield 6 cheat plans listed?',
-    a: `${productsHub} lists ${complete}, ${aimbotPlan}, and ${espPlan} with module breakdowns and secure checkout links.`,
+    a: `${productsIndex('Battlefield 6 product hub')} lists ${completeTier('Complete cheat suite')}, ${aimbotTier('Aimbot-only tier')}, and ${espTier('ESP wallhack tier')} with module breakdowns and secure checkout links.`,
   },
   {
     id: 'what-is-esp',
     topic: 'esp',
     icon: 'faqWhatIsEsp',
     q: 'What is Battlefield 6 ESP and wallhack?',
-    a: `Player ESP and wallhack overlays show infantry positions, health, skeletons, and distance through smoke and cover on Conquest and Breakthrough. ${espPlan} covers the visual suite; ${complete} adds aimbot and misc tools on the same license.`,
+    a: `Player ESP and wallhack overlays show infantry positions, health, skeletons, and distance through smoke and cover on Conquest and Breakthrough. ${espTier('ESP wallhack modules')} covers the visual suite; ${completeTier('Complete license')} adds aimbot and misc tools on the same key.`,
     scopes: ['esp-wallhack', 'complete'],
   },
   {
@@ -101,14 +101,14 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'esp',
     icon: 'faqEspVsScripts',
     q: 'What is the difference between ESP wallhack and aimbot?',
-    a: `ESP and wallhack are information overlays—they do not move your crosshair. Aimbot modules on ${aimbotPlan} and ${complete} handle smooth tracking, FOV, and bone priority. You can stay awareness-only on ${espPlan}.`,
+    a: `ESP and wallhack are information overlays—they do not move your crosshair. Aimbot modules on ${aimbotTier('Aimbot tier')} and ${completeTier('Complete package')} handle smooth tracking, FOV, and bone priority. You can stay awareness-only on ${espTier('ESP-only plan')}.`,
   },
   {
     id: 'which-tier-esp',
     topic: 'plans',
     icon: 'faqWhichTierEsp',
     q: 'Which plan do I need for ESP wallhack only?',
-    a: `${espPlan} includes player and bot ESP, boxes, skeletons, snaplines, health bars, names, distance, and max range—no aimbot automation. ${complete} adds all twelve aimbot modules plus config and crosshair tools.`,
+    a: `${espTier('ESP wallhack plan')} includes player and bot ESP, boxes, skeletons, snaplines, health bars, names, distance, and max range—no aimbot automation. ${completeTier('Complete plan')} adds all twelve aimbot modules plus config and crosshair tools.`,
     scopes: ['esp-wallhack'],
   },
   {
@@ -116,7 +116,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'scripts',
     icon: 'faqWhichTierScripts',
     q: 'Which plan includes aimbot?',
-    a: `${aimbotPlan} ships every aimbot module: smoothness, FOV, bone selection, visible check, team and bot filters, and FOV drawing. ${complete} includes the same aimbot stack plus the full ESP suite. ${espPlan} has no aimbot.`,
+    a: `${aimbotTier('Aimbot plan page')} ships every aimbot module: smoothness, FOV, bone selection, visible check, team and bot filters, and FOV drawing. ${completeTier('Complete suite')} includes the same aimbot stack plus the full ESP suite. ${espTier('ESP wallhack tier')} has no aimbot.`,
     scopes: ['aimbot'],
   },
   {
@@ -124,7 +124,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqRankTiers',
     q: 'How do Complete, Aimbot, and ESP / wallhack compare?',
-    a: `Map awareness only → ${espPlan}. Infantry tracking without full ESP → ${aimbotPlan}. All 29 modules on one key → ${complete}. Compare tables on each product page or the ${faqPage}.`,
+    a: `Map awareness only → ${espTier('ESP-only tier')}. Infantry tracking without full ESP → ${aimbotTier('Aimbot tier')}. All 29 modules on one key → ${completeTier('Complete tier')}. Compare tables on each product page or the ${faqIndex('FAQ index')}.`,
   },
   {
     id: 'stream-proof',
@@ -158,21 +158,21 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'products',
     icon: 'faqExternalLoader',
     q: 'Does the loader install into my Battlefield 6 game folder?',
-    a: `The loader runs external with cloud config sync—nothing is injected into EA App or Steam game directories. Anti-cheat risk still applies. See ${productsHub} for requirements.`,
+    a: `The loader runs external with cloud config sync—nothing is injected into EA App or Steam game directories. Anti-cheat risk still applies. See ${productsIndex('product requirements')} for specs.`,
   },
   {
     id: 'compare-plans',
     topic: 'plans',
     icon: 'faqComparePlans',
     q: 'Where do I compare plans side by side?',
-    a: `Each product page includes a feature list and compare context. The ${faqPage} collects setup, safety, and plan answers—or browse ${forum} for mode-specific tips.`,
+    a: `Each product page includes a feature list and compare context. The ${faqIndex('setup FAQ')} collects setup, safety, and plan answers—or browse ${forumHub('BF6 player forum')} for mode-specific tips.`,
   },
   {
     id: 'who-esp',
     topic: 'plans',
     icon: 'faqWhoLite',
     q: 'Who should buy ESP / wallhack?',
-    a: `Players who want Conquest and Breakthrough awareness—boxes, skeletons, health, distance—and will not use aimbot. If you need smooth aim modules, choose ${aimbotPlan} or ${complete} instead.`,
+    a: `Players who want Conquest and Breakthrough awareness—boxes, skeletons, health, distance—and will not use aimbot. If you need smooth aim modules, choose ${aimbotTier('Aimbot modules')} or ${completeTier('Complete bundle')} instead.`,
     scopes: ['esp-wallhack'],
   },
   {
@@ -180,7 +180,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqWhoPro',
     q: 'Who should buy Aimbot?',
-    a: `PC players who want smooth tracking, FOV limits, bone priority, and visible checks without paying for the full visual suite. Pair with ${espPlan} or upgrade to ${complete} when you want every module.`,
+    a: `PC players who want smooth tracking, FOV limits, bone priority, and visible checks without paying for the full visual suite. Pair with ${espTier('ESP overlays')} or upgrade to ${completeTier('Complete upgrade')} when you want every module.`,
     scopes: ['aimbot'],
   },
   {
@@ -214,14 +214,14 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqZoomRanked',
     q: 'Do plans work in Conquest, Breakthrough, and REDSEC?',
-    a: `Yes—${complete}, ${aimbotPlan}, and ${espPlan} include mode presets in the portal. Tune ESP max distance and aimbot smoothness in a custom or low-pressure match before 64-player queues.`,
+    a: `Yes—${completeTier('Complete presets')}, ${aimbotTier('Aimbot presets')}, and ${espTier('ESP presets')} include mode presets in the portal. Tune ESP max distance and aimbot smoothness in a custom or low-pressure match before 64-player queues.`,
   },
   {
     id: 'radar-context',
     topic: 'esp',
     icon: 'faqZoomHack',
     q: 'Which plan includes 2D radar?',
-    a: `${complete} bundles the full cheat suite including radar-style awareness tools with ESP. ${espPlan} focuses on world overlays; see each product page for the current module list.`,
+    a: `${completeTier('Complete radar bundle')} bundles the full cheat suite including radar-style awareness tools with ESP. ${espTier('ESP overlays only')} focuses on world overlays; see each product page for the current module list.`,
     scopes: ['complete'],
   },
   {
@@ -229,7 +229,7 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'scripts',
     icon: 'faqAutoFarm',
     q: 'Which aimbot options ship on the Aimbot plan?',
-    a: `Toggle and hold modes, head/neck/body/pelvis bones, smoothness, FOV, distance caps, bot and team filters, visible check, and FOV border drawing—all on ${aimbotPlan} and ${complete}.`,
+    a: `Toggle and hold modes, head/neck/body/pelvis bones, smoothness, FOV, distance caps, bot and team filters, visible check, and FOV border drawing—all on ${aimbotTier('Aimbot feature list')} and ${completeTier('Complete aimbot stack')}.`,
     scopes: ['aimbot', 'complete'],
   },
   {
@@ -255,21 +255,21 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'products',
     icon: 'faqMore',
     q: 'Where are setup and mode guides?',
-    a: `${forum} hosts patch-day notes, OBS capture threads, and Conquest tuning tips. Product pages remain authoritative for checkout and module lists.`,
+    a: `${forumHub('Forum guides')} hosts patch-day notes, OBS capture threads, and Conquest tuning tips. Product pages remain authoritative for checkout and module lists.`,
   },
   {
     id: 'upgrade-path',
     topic: 'plans',
     icon: 'faqComparePlans',
     q: 'Can I upgrade from Aimbot or ESP to Complete?',
-    a: `Compare module lists on ${productsHub}, then move to ${complete} through checkout when you want every aimbot, visual, and misc tool on one license.`,
+    a: `Compare module lists on ${productsIndex('plan comparison hub')}, then move to ${completeTier('Complete checkout')} through checkout when you want every aimbot, visual, and misc tool on one license.`,
   },
   {
     id: 'faq-more',
     topic: 'all',
     icon: 'faqMore',
     q: 'Where is the full FAQ?',
-    a: `Landing pages show quick answers; the ${faqPage} lists every topic. For long-form threads on smoothness, vehicle awareness, and stream capture, visit the ${forum}.`,
+    a: `Landing pages show quick answers; the ${faqIndex('full FAQ list')} lists every topic. For long-form threads on smoothness, vehicle awareness, and stream capture, visit the ${forumHub('community discussions')}.`,
   },
 ];
 
@@ -286,7 +286,7 @@ export function getAllFaqs(): SiteFaqItem[] {
 /** Shared FAQ block copy + filters (home, /faq/, products). */
 export const SITE_FAQ_SECTION_COPY = {
   eyebrow: 'All topics',
-  title: 'Battlefield 6 hacks FAQ',
+  title: 'FAQ: Battlefield 6 hacks',
   subtitle: 'Filter by plans, ESP wallhack, aimbot, products, setup, and safety.',
 } as const;
 

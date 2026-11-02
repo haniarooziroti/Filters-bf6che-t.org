@@ -10,9 +10,9 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       'Buy Battlefield 6 hacks with aimbot, ESP wallhack, and 29 modules. $15 week, $35 month, instant key, free updates. Windows PC — EA App & Steam.',
   },
   '/products/battlefield-6-cheats/': {
-    title: 'Battlefield 6 Hacks | Complete, Aimbot & ESP Plans',
+    title: 'Cheats – Battlefield 6 Complete, Aimbot & ESP Plans',
     description:
-      'Shop battlefield6 hacks: Complete suite (29 modules), Aimbot-only, or ESP wallhack. Compare features, pricing from $15/week, and checkout in minutes on PC.',
+      'Cheats for Battlefield 6: Complete suite (29 modules), Aimbot-only, or ESP wallhack. Compare features, pricing from $15/week, and checkout on PC.',
   },
   '/products/battlefield-6-cheats/complete/': {
     title: 'Battlefield 6 Complete Cheats | Full Aimbot & ESP Suite',
@@ -45,7 +45,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
       'Battlefield 6 cheats forum for aimbot settings, ESP layout tips, loader setup and patch-day questions from real PC players.',
   },
   '/faq/': {
-    title: 'Battlefield 6 Hacks FAQ | Setup, Plans & Ban Risk',
+    title: 'FAQ | Battlefield 6 Hacks Setup, Plans & Ban Risk',
     description:
       'Battlefield 6 hacks FAQ: Windows requirements, aimbot and ESP basics, $15–$150 plans, HWID reset, loader setup, and what to check after every BF6 patch.',
   },

@@ -20,6 +20,7 @@ interface Props {
   description?: string;
   ogImage?: string;
   ogImageAlt?: string;
+  logoAlt?: string;
   ogType?: 'website' | 'article';
   articlePublishedTime?: string;
   articleModifiedTime?: string;
@@ -32,6 +33,7 @@ const {
   description = t.site.description,
   ogImage = DEFAULT_OG_IMAGE,
   ogImageAlt = title,
+  logoAlt = 'Battlefield 6 Hacks logo',
   ogType = 'website',
   articlePublishedTime,
   articleModifiedTime,
@@ -137,7 +139,7 @@ const robotsContent = noindex
     <main id="main-content">
       <slot />
     </main>
-    <Footer />
+    <Footer logoAlt={logoAlt} />
     <script>
       import '../scripts/site.ts';
     </script>

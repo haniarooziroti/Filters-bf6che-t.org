@@ -1,9 +1,55 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { resolveDistDir } from './dist-dir.mjs';
 
 const SITE = 'https://battlefield6hacks.net';
 const dist = resolveDistDir();
+const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+
+/** @returns {Map<string, string>} pathname → ISO date */
+function loadBlogLastmods() {
+  const blogDir = path.join(repoRoot, 'content', 'blog');
+  /** @type {Map<string, string>} */
+  const map = new Map();
+  if (!fs.existsSync(blogDir)) return map;
+  for (const file of fs.readdirSync(blogDir)) {
+    if (!file.endsWith('.md')) continue;
+    const raw = fs.readFileSync(path.join(blogDir, file), 'utf8');
+    const slug = file.replace(/\.md$/, '');
+    const updated = raw.match(/^updated(?:Date)?:\s*['"]?([^\n'"]+)/m)?.[1]?.trim();
+    const published = raw.match(/^date:\s*['"]?([^\n'"]+)/m)?.[1]?.trim();
+    const value = updated || published;
+    if (value) map.set(`/blog/${slug}/`, value);
+  }
+  if (fs.existsSync(path.join(blogDir, 'index'))) {
+    /* no index */
+  }
+  const blogIndex = path.join(repoRoot, 'src', 'pages', 'blog', 'index.astro');
+  if (fs.existsSync(blogIndex)) {
+    map.set('/blog/', fs.statSync(blogIndex).mtime.toISOString());
+  }
+  return map;
+}
+
+const blogLastmods = loadBlogLastmods();
+
+function htmlPathForLoc(loc) {
+  const pathname = new URL(loc).pathname;
+  return path.join(dist, pathname.slice(1), 'index.html');
+}
+
+/** @param {string} loc @param {string | undefined} fallback */
+function resolveLastmod(loc, fallback) {
+  const pathname = new URL(loc).pathname;
+  const fromBlog = blogLastmods.get(pathname);
+  if (fromBlog) return formatLastmod(fromBlog);
+  const htmlPath = htmlPathForLoc(loc);
+  if (fs.existsSync(htmlPath)) {
+    return formatLastmod(fs.statSync(htmlPath).mtime.toISOString());
+  }
+  return formatLastmod(fallback);
+}
 
 function loadUrlsetXml(dir) {
   const zero = path.join(dir, 'sitemap-0.xml');
@@ -70,7 +116,7 @@ function normalizeUrl(loc) {
   url.hostname = 'battlefield6hacks.net';
   url.hash = '';
   url.search = '';
-  let pathname = url.pathname;
+  let pathname = url.pathname.toLowerCase();
   if (!pathname.endsWith('/')) pathname += '/';
   if (pathname.includes('/404') || pathname.startsWith('/go/')) return null;
   return `${SITE}${pathname}`;
@@ -145,7 +191,7 @@ for (const item of parsed) {
   seen.add(loc);
   byBucket[bucketFor(loc)].push({
     loc,
-    lastmod: item.lastmod,
+    lastmod: resolveLastmod(loc, item.lastmod),
     changefreq: item.changefreq,
     priority: item.priority,
   });
@@ -186,16 +232,18 @@ const indexXml = renderIndex(written);
 fs.writeFileSync(path.join(dist, 'sitemap.xml'), indexXml, 'utf8');
 fs.writeFileSync(path.join(dist, 'sitemap-index.xml'), indexXml, 'utf8');
 
-// Keep a combined urlset for IndexNow + tools that expect one file of <url> entries.
+// Combined urlset for IndexNow only (not listed in robots.txt).
 const allUrls = childFiles.flatMap((c) => byBucket[c.key]);
-fs.writeFileSync(path.join(dist, 'sitemap-0.xml'), renderUrlset(allUrls), 'utf8');
-
-// Point IndexNow at the combined urlset (not the index).
 fs.writeFileSync(path.join(dist, 'sitemap-all.xml'), renderUrlset(allUrls), 'utf8');
+
+for (const stale of ['sitemap-0.xml']) {
+  const stalePath = path.join(dist, stale);
+  if (fs.existsSync(stalePath)) fs.unlinkSync(stalePath);
+}
 
 console.log(`Sitemap finalized: ${total} URLs`);
 for (const w of written) {
   console.log(`  ${w.name}: ${w.count}`);
 }
 console.log('  sitemap.xml / sitemap-index.xml → index');
-console.log('  sitemap-all.xml → combined urlset');
+console.log('  sitemap-all.xml → combined urlset (IndexNow only)');
