@@ -1,6 +1,20 @@
 @import './product-experience-section.css';
 
-/* Catalog card — compact badges under title */
+/* Landing product cards — keep footers inside card bounds */
+#products [data-slot='card'] {
+  min-width: 0;
+}
+
+#products [data-slot='card-footer'] {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+#products [data-slot='card-footer'] .inline-flex {
+  max-width: 100%;
+}
+
 .catalog-card__badge {
   padding: 0.125rem 0.5rem;
   font-size: 0.6875rem;
