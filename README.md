@@ -10,12 +10,18 @@ https://github.com/haniarooziroti/Filters-bf6che-t.org.git
 
 Cloudflare Workers → Settings → Builds must use **this exact repo** (`Filters-bf6che-t.org`, not `bf6cheat.org` or the old `battlefield-6-hacks-.net` repo). Production branch: `main`.
 
-If Cloudflare shows **“Fetching repository failed”**:
+If Cloudflare shows **“Fetching repository failed”** (clone step, before `npm ci`):
 
-1. Reconnect GitHub under Cloudflare (Workers & Pages → your worker → Settings → Build).
-2. Grant the Cloudflare GitHub App access to `haniarooziroti/Filters-bf6che-t.org`.
-3. Confirm the repo name spelling includes `bf6che-t` (typo in repo name is intentional).
-4. Retry deploy after a successful push to `main`.
+The Git remote and `git ls-remote` from this project are OK when pointed at `Filters-bf6che-t.org.git`; the failure is almost always **Cloudflare ↔ GitHub**, not Astro.
+
+1. **Wrong repo in dashboard** — Worker `bf6cheat-org` → **Settings** → **Build** must show  
+   `haniarooziroti/Filters-bf6che-t.org` (not `battlefield-6-hacks-.net`, not a guessed `bf6cheat.org` repo).  
+   Production branch: **`main`**.
+2. **Private repository** — This repo is not public on github.com without login. On GitHub: **Settings** → **Integrations** → **Applications** → **Cloudflare Workers and Pages** → **Configure** → select **Only select repositories** → add **`Filters-bf6che-t.org`** → Save.
+3. **Reconnect** — In Cloudflare Build settings: **Disconnect** GitHub → connect again and pick the repo above.
+4. **Verify locally** — `npm run verify:github` then push `main` and **Retry deployment**.
+
+Alternative deploy (bypasses Cloudflare git clone): add GitHub repo secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`, then use the workflow `.github/workflows/deploy-cloudflare.yml` (`gh` not required on your PC for that to run on GitHub).
 
 ## Local development
 

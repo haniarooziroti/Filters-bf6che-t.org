@@ -26,7 +26,8 @@
     "verify:links": "node scripts/verify-internal-links.mjs",
     "verify:images": "node scripts/verify-image-usage.mjs",
     "audit:full": "node scripts/full-audit.mjs",
-    "verify:migration": "node scripts/verify-migration.mjs"
+    "verify:migration": "node scripts/verify-migration.mjs",
+    "verify:github": "node scripts/verify-github-for-cloudflare.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
