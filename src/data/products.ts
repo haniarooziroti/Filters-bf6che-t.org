@@ -92,7 +92,7 @@ const defaultAcquisitionSteps: AcquisitionStep[] = [
   {
     num: '02',
     title: 'Pick a plan',
-    desc: 'Choose 1 Week ($15), 1 Month ($35), or Lifetime ($150). Complete includes all 29 modules; Aimbot and ESP / wallhack focus on tracking or visuals only.',
+    desc: 'Pick weekly, monthly, or lifetime access on the checkout page. Complete includes all 29 modules; Aimbot and ESP / wallhack focus on tracking or visuals only.',
   },
   {
     num: '03',
@@ -412,6 +412,20 @@ export const heroSlides = slide(
   'gpRadar',
   'gpConquest',
 );
+
+export function getProductFeatureGroups(slug: string): { heading: string; features: readonly string[] }[] {
+  if (slug === 'aimbot') {
+    return [{ heading: 'Aimbot', features: aimbotModules }];
+  }
+  if (slug === 'esp-wallhack') {
+    return [{ heading: 'ESP / Visuals', features: visualModules }];
+  }
+  return [
+    { heading: 'Aimbot', features: aimbotModules },
+    { heading: 'ESP / Visuals', features: visualModules },
+    { heading: 'Additional options', features: miscModules },
+  ];
+}
 
 export const productHub = {
   path: PRODUCT_BASE,

@@ -5,7 +5,7 @@ import zlib from 'node:zlib';
 import { resolvePathRedirect } from './redirects.mjs';
 import { resolveCheckoutPathRedirect } from '../src/config/checkout-redirects.mjs';
 
-const CANONICAL_HOST = 'battlefield6hacks.net';
+const CANONICAL_HOST = 'bf6cheat.org';
 const distDir = path.resolve('dist');
 const port = Number(process.env.PORT) || 3000;
 
@@ -118,6 +118,11 @@ function pickEncoding(acceptEncoding = '') {
   return null;
 }
 
+function isPreviewHost(req) {
+  const host = getRequestHost(req);
+  return host.endsWith('.workers.dev') || host.endsWith('.pages.dev');
+}
+
 function sendFile(req, res, filePath, statusCode = 200) {
   const ext = path.extname(filePath).toLowerCase();
   const headers = {
@@ -125,6 +130,10 @@ function sendFile(req, res, filePath, statusCode = 200) {
     'Cache-Control': getCacheControl(filePath),
     Vary: 'Accept-Encoding',
   };
+
+  if (isPreviewHost(req)) {
+    headers['X-Robots-Tag'] = 'noindex, nofollow';
+  }
 
   const encoding =
     COMPRESSIBLE.has(ext) && !res.getHeader?.('Content-Encoding')

@@ -8,7 +8,10 @@ import { resolvePageSeo } from '../../../config/seo';
 import { breadcrumbSchema, collectionPageSchema, itemListSchema } from '../../../utils/schema';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import CatalogCard from '../../../components/CatalogCard.astro';
-import ProductDurationCards from '../../../components/ProductDurationCards.astro';
+import ProductAddonCards from '../../../components/ProductAddonCards.astro';
+import { PRIMARY_CHECKOUT_PATH } from '../../../config/checkout';
+import { Button } from '@/components/starwind/button';
+import Icon from '../../../components/icons/Icon.astro';
 import { productPath } from '../../../utils/path';
 import BlogShareBar from '../../../components/BlogShareBar.astro';
 import PageSeoExpansion from '../../../components/PageSeoExpansion.astro';
@@ -91,7 +94,22 @@ function cardLabel(product: (typeof productPages)[number]) {
     </div>
   </section>
 
-  <ProductDurationCards />
+  <section class="border-t border-border bg-muted/10 py-10 md:py-14" aria-labelledby="product-features-hub-title">
+    <div class="mx-auto max-w-6xl px-5">
+      <h2 id="product-features-hub-title" class="font-[family-name:var(--font-heading)] text-2xl font-semibold">
+        Product features
+      </h2>
+      <p class="mt-2 max-w-2xl text-sm text-muted-foreground">
+        Explore what&rsquo;s included across Complete, Aimbot, and ESP plans—then finish plan selection on the merchant checkout page.
+      </p>
+      <Button as="a" href={PRIMARY_CHECKOUT_PATH} rel="noopener noreferrer sponsored" variant="primary" size="lg" class="mt-6 rounded-xl">
+        Buy Now
+        <Icon name="arrowRight" size={17} />
+      </Button>
+    </div>
+  </section>
+
+  <ProductAddonCards />
 
   <PageSeoExpansion
     sections={productHubExpansion.sections}

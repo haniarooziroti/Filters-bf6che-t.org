@@ -157,7 +157,7 @@ export const extendedReviews: SiteReview[] = [
     'late_shift_gamer',
     'Jan 2026',
     '1 Week key',
-    'Bought the $15 week to test before committing. Loader worked first try on Steam version. Renewed to monthly.',
+    'Bought a short trial key to test before committing. Loader worked first try on Steam version. Renewed to monthly.',
     'purchasing',
     5,
   ),

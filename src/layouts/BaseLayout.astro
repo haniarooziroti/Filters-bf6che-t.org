@@ -33,7 +33,7 @@ const {
   description = t.site.description,
   ogImage = DEFAULT_OG_IMAGE,
   ogImageAlt = title,
-  logoAlt = 'Battlefield 6 Hacks logo',
+  logoAlt = 'BF6 Cheats logo',
   ogType = 'website',
   articlePublishedTime,
   articleModifiedTime,
@@ -43,7 +43,9 @@ const {
 
 const canonicalURL = canonicalUrl(Astro.url.pathname);
 const ogImageUrl = absoluteAssetUrl(ogImage);
-const robotsContent = noindex
+const hostname = Astro.url.hostname.toLowerCase();
+const previewHost = hostname.endsWith('.workers.dev') || hostname.endsWith('.pages.dev');
+const robotsContent = noindex || previewHost
   ? 'noindex, nofollow'
   : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 ---

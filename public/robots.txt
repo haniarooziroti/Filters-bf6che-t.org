@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /go/
 
-Sitemap: https://battlefield6hacks.net/sitemap.xml
+Sitemap: https://bf6cheat.org/sitemap.xml

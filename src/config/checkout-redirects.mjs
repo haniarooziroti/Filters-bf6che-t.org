@@ -1,6 +1,8 @@
 /** Checkout destinations keyed by internal product id. */
 export const CHECKOUT_URLS = {
   battlefield6: 'https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fbf6',
+  cloudDma: 'https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fcloud-dma',
+  hwidSpoofer: 'https://zadeyo.com/go/HANIA?to=%2Fproducts%2Fhwid-spoofer',
 };
 
 export const CHECKOUT_PATH_REDIRECTS = new Map([
@@ -10,8 +12,10 @@ export const CHECKOUT_PATH_REDIRECTS = new Map([
   ['/go/fortnite/', CHECKOUT_URLS.battlefield6],
   ['/go/skin-changer', CHECKOUT_URLS.battlefield6],
   ['/go/skin-changer/', CHECKOUT_URLS.battlefield6],
-  ['/go/hwid-spoofer', CHECKOUT_URLS.battlefield6],
-  ['/go/hwid-spoofer/', CHECKOUT_URLS.battlefield6],
+  ['/go/cloud-dma', CHECKOUT_URLS.cloudDma],
+  ['/go/cloud-dma/', CHECKOUT_URLS.cloudDma],
+  ['/go/hwid-spoofer', CHECKOUT_URLS.hwidSpoofer],
+  ['/go/hwid-spoofer/', CHECKOUT_URLS.hwidSpoofer],
   ['/go/ugc', CHECKOUT_URLS.battlefield6],
   ['/go/ugc/', CHECKOUT_URLS.battlefield6],
 ]);

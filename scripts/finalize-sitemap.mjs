@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { resolveDistDir } from './dist-dir.mjs';
 
-const SITE = 'https://battlefield6hacks.net';
+const SITE = 'https://bf6cheat.org';
 const dist = resolveDistDir();
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -113,7 +113,7 @@ function normalizeUrl(loc) {
     return null;
   }
   if (url.protocol !== 'https:') url.protocol = 'https:';
-  url.hostname = 'battlefield6hacks.net';
+  url.hostname = 'bf6cheat.org';
   url.hash = '';
   url.search = '';
   let pathname = url.pathname.toLowerCase();

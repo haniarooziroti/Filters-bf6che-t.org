@@ -1,8 +1,10 @@
-# Static Astro site — do not auto-add @astrojs/cloudflare (keeps output in dist/).
-name = "battlefield6hacks-net"
+# Static Astro site — custom worker for preview-host noindex; assets served from dist/.
+name = "bf6cheat-org"
+main = "worker.mjs"
 compatibility_date = "2025-10-11"
 
 [assets]
 directory = "./dist"
+binding = "ASSETS"
 not_found_handling = "404-page"
 html_handling = "auto-trailing-slash"

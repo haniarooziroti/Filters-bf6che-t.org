@@ -42,7 +42,7 @@ export const siteFaqs: SiteFaqItem[] = [
     icon: 'faqStatus',
     q: 'Where do I check if Battlefield 6 hacks are online?',
     a: a(
-      'Use the live status banner on battlefield6hacks.net and the Discord #status channel. Always confirm after a Battlefield 6 client patch or Javelin anti-cheat update before you launch.',
+      'Use the live status banner on bf6cheat.org and the Discord #status channel. Always confirm after a Battlefield 6 client patch or Javelin anti-cheat update before you launch.',
     ),
   },
   {
@@ -197,7 +197,7 @@ export const siteFaqs: SiteFaqItem[] = [
     icon: 'faqEacUpdate',
     q: 'What should I do after a Javelin or Battlefield 6 update?',
     a: a(
-      'Check battlefield6hacks.net status and Discord #status. Wait until the banner shows online, then reload portal presets instead of reusing old smoothness or ESP range values from before the patch.',
+      'Check bf6cheat.org status and Discord #status. Wait until the banner shows online, then reload portal presets instead of reusing old smoothness or ESP range values from before the patch.',
     ),
   },
   {

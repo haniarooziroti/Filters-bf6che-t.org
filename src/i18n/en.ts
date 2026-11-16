@@ -6,11 +6,11 @@ const productBase = PRODUCT_BASE;
 
 export const en: Translations = {
   site: {
-    name: 'Battlefield 6 Hacks',
-    domain: 'battlefield6hacks.net',
-    title: 'Battlefield 6 Hacks | Aimbot, ESP & Wallhack — Buy PC Cheats',
+    name: 'BF6 Cheats',
+    domain: 'bf6cheat.org',
+    title: 'Battlefield 6 Cheats for PC | ESP & Aimbot Features',
     description:
-      'Buy Battlefield 6 hacks with aimbot, ESP wallhack, and 29 modules. $15 week, $35 month, instant key, free updates. Windows PC — EA App & Steam.',
+      'Explore Battlefield 6 cheats for PC, compare ESP and aimbot features, review compatibility, and find product details before checkout.',
     discord: DISCORD_URL,
   },
   nav: [
@@ -24,8 +24,8 @@ export const en: Translations = {
   hero: {
     status: 'Battlefield 6 online',
     eyebrow: 'PC tools for large-scale combat',
-    titleLine1: 'Battlefield 6 Hacks',
-    titleLine2: 'Aimbot, ESP, Wallhack & Cheats',
+    titleLine1: 'Battlefield 6 Cheats for PC',
+    titleLine2: '',
     subtitle:
       'Battlefield 6 hacks built for Conquest, Breakthrough, Rush, and REDSEC—aimbot tuning, ESP wallhack, vehicle tags, and radar so you read pushes and flanks instead of guessing.',
     ctaPrimary: 'Compare hack plans',
@@ -202,7 +202,7 @@ export const en: Translations = {
       {
         value: '127+',
         title: 'Reviews',
-        desc: 'Written feedback from PC players using aimbot, ESP, and radar on battlefield6hacks.net.',
+        desc: 'Written feedback from PC players using aimbot, ESP, and radar on bf6cheat.org.',
       },
     ],
   },
@@ -369,7 +369,7 @@ export const en: Translations = {
         num: '01',
         phase: 'Before purchase',
         title: 'Check status',
-        desc: 'Read the live banner on battlefield6hacks.net before you buy or launch.',
+        desc: 'Read the live banner on bf6cheat.org before you buy or launch.',
       },
       {
         num: '02',
@@ -416,8 +416,8 @@ export const en: Translations = {
         icon: 'headphones',
         title: 'Email support',
         desc: 'Loader errors, license moves, and account issues.',
-        linkLabel: 'support@battlefield6hacks.net',
-        href: 'mailto:support@battlefield6hacks.net',
+        linkLabel: 'support@bf6cheat.org',
+        href: 'mailto:support@bf6cheat.org',
       },
       {
         icon: 'navFaq',
@@ -436,7 +436,7 @@ export const en: Translations = {
     ],
     ticketTitle: 'Include in your ticket',
     ticketItems: [
-      { title: 'Order email', desc: 'The email you used at checkout on battlefield6hacks.net.' },
+      { title: 'Order email', desc: 'The email you used at checkout on bf6cheat.org.' },
       { title: 'Platform', desc: 'Windows 10 or 11, EA App or Steam, and your Battlefield 6 build.' },
       { title: 'Error detail', desc: 'Screenshot or exact text from the loader or game client.' },
     ],
@@ -449,7 +449,7 @@ export const en: Translations = {
       {
         num: '01',
         q: 'Where do I check if Battlefield 6 cheats are online?',
-        a: 'The live status banner is on battlefield6hacks.net and in the Discord #status channel. Always check after a Battlefield 6 or anti-cheat update.',
+        a: 'The live status banner is on bf6cheat.org and in the Discord #status channel. Always check after a Battlefield 6 or anti-cheat update.',
       },
       {
         num: '02',
@@ -534,12 +534,12 @@ export const en: Translations = {
     privacy: {
       title: 'Privacy – cookies, contact data when you browse',
       description:
-        'Your privacy matters when you browse product pages. This overview explains how battlefield6hacks.net handles analytics, cookies, contact messages, and checkout referrals.',
+        'Your privacy matters when you browse product pages. This overview explains how bf6cheat.org handles analytics, cookies, contact messages, and checkout referrals.',
       sections: [
         {
           heading: 'Privacy: Information we collect',
           paragraphs: [
-            'We may collect basic analytics such as page views, device type, browser, and approximate region through Google Analytics when it is enabled. Checkout runs on external pages operated by the seller. We do not store payment card numbers on battlefield6hacks.net.',
+            'We may collect basic analytics such as page views, device type, browser, and approximate region through Google Analytics when it is enabled. Checkout runs on external pages operated by the seller. We do not store payment card numbers on bf6cheat.org.',
             'If you email support, we keep the address and message content until your ticket is resolved. Data-related requests should mention the email you used so we can locate prior threads.',
           ],
         },
@@ -576,12 +576,12 @@ export const en: Translations = {
     terms: {
       title: 'Terms for Battlefield 6 Hacks | License & Refunds',
       description:
-        'Terms for buying Battlefield 6 cheats on battlefield6hacks.net — license use, delivery, refunds, and account risk.',
+        'Terms for buying Battlefield 6 cheats on bf6cheat.org — license use, delivery, refunds, and account risk.',
       sections: [
         {
           heading: 'Agreement',
           paragraphs: [
-            'Last updated: October 2026. By using battlefield6hacks.net or buying a product listed here, you agree to these Terms & Conditions and our Privacy Policy.',
+            'Last updated: October 2026. By using bf6cheat.org or buying a product listed here, you agree to these Terms & Conditions and our Privacy Policy.',
           ],
         },
         {
@@ -594,7 +594,7 @@ export const en: Translations = {
         {
           heading: 'Checkout and delivery',
           paragraphs: [
-            'Payment and license delivery run on external checkout pages. battlefield6hacks.net does not process or store payment card numbers.',
+            'Payment and license delivery run on external checkout pages. bf6cheat.org does not process or store payment card numbers.',
             'After purchase, use the operator portal linked from your order flow to download the current loader and setup guide before launching Battlefield 6.',
           ],
         },
@@ -636,7 +636,7 @@ export const en: Translations = {
     support: {
       title: 'Battlefield 6 Hacks Support | Loader & Checkout',
       description:
-        'Battlefield 6 Hacks support for loader setup, license moves, and checkout help at battlefield6hacks.net.',
+        'Battlefield 6 Hacks support for loader setup, license moves, and checkout help at bf6cheat.org.',
     },
   },
   ui: {

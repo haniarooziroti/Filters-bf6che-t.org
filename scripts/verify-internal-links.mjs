@@ -3,7 +3,7 @@ import path from 'node:path';
 import { resolveDistDir } from './dist-dir.mjs';
 
 const dist = resolveDistDir();
-const siteOrigin = 'https://battlefield6hacks.net';
+const siteOrigin = 'https://bf6cheat.org';
 
 function walkHtml(dir, acc = []) {
   if (!fs.existsSync(dir)) return acc;

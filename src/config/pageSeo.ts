@@ -5,14 +5,14 @@ export interface PageSeoEntry {
 
 export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/': {
-    title: 'Battlefield 6 Hacks | Aimbot, ESP & Wallhack — Buy PC Cheats',
+    title: 'Battlefield 6 Cheats for PC | ESP & Aimbot Features',
     description:
-      'Buy Battlefield 6 hacks with aimbot, ESP wallhack, and 29 modules. $15 week, $35 month, instant key, free updates. Windows PC — EA App & Steam.',
+      'Explore Battlefield 6 cheats for PC, compare ESP and aimbot features, review compatibility, and find product details before checkout.',
   },
   '/products/battlefield-6-cheats/': {
     title: 'Cheats – Battlefield 6 Complete, Aimbot & ESP Plans',
     description:
-      'Compare Battlefield 6 cheat tiers: 29-module Complete suite, Aimbot-only, or ESP wallhack. Pricing, setup steps, plan table, and FAQs before checkout on.',
+      'Compare Battlefield 6 cheat tiers: 29-module Complete suite, Aimbot-only, or ESP wallhack. Feature lists, setup steps, plan table, and FAQs before checkout.',
   },
   '/products/battlefield-6-cheats/complete/': {
     title: 'Battlefield 6 Complete Cheats | Full Aimbot & ESP Suite',
@@ -32,7 +32,7 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/blog/': {
     title: 'Battlefield 6 Cheats Blog | Aimbot, ESP & Setup Guides',
     description:
-      'Battlefield 6 cheats blog with aimbot guides, ESP wallhack tips, pricing comparisons, and loader setup for PC players before checkout.',
+      'Battlefield 6 cheats blog with aimbot guides, ESP wallhack tips, plan comparisons, and loader setup for PC players before checkout.',
   },
   '/reviews/': {
     title: 'Battlefield 6 Hacks Reviews | 127+ PC Player Ratings',
@@ -47,17 +47,17 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = {
   '/faq/': {
     title: 'FAQ | Battlefield 6 Hacks Setup, Plans & Ban Risk PC',
     description:
-      'Battlefield 6 hacks FAQ: Windows requirements, aimbot and ESP basics, $15–$150 plans, HWID reset, loader setup, and what to check after every BF6 patch.',
+      'Battlefield 6 hacks FAQ: Windows requirements, aimbot and ESP basics, plan durations, HWID reset, loader setup, and what to check after every BF6 patch.',
   },
   '/terms/': {
     title: 'Terms | Battlefield 6 Cheats License & Refunds',
     description:
-      'Terms for buying Battlefield 6 cheats on battlefield6hacks.net — license use, delivery, refunds and account risk on PC.',
+      'Terms for buying Battlefield 6 cheats on bf6cheat.org — license use, delivery, refunds and account risk on PC.',
   },
   '/privacy/': {
     title: 'Privacy – cookies and contact data when you browse',
     description:
-      'Privacy: How battlefield6hacks.net uses analytics, cookies and contact data when you browse Battlefield 6 cheat pages on this site.',
+      'Privacy: How bf6cheat.org uses analytics, cookies and contact data when you browse Battlefield 6 cheat pages on this site.',
   },
   '/about/': {
     title: 'Battlefield 6 – forums and checkout paths for PC players',

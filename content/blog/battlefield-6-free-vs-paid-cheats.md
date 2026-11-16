@@ -12,8 +12,8 @@ faq:
     a: "Free downloads usually come with no support, no guaranteed updates and no one accountable if something goes wrong."
   - q: "What does a paid key include?"
     a: "Instant delivery, free updates during your key, support by ticket or Discord, and an HWID reset in the portal."
-  - q: "What is the cheapest paid option?"
-    a: "A one-week key at $15, which lets you try the full software."
+  - q: "What is the shortest paid option?"
+    a: "A one-week key, which lets you try the full software before a longer license."
 ---
 
 Free sounds great until you ask the obvious question: if nobody is paying for it, who is keeping it working?
@@ -41,9 +41,9 @@ That is the real difference between free and paid. It is not about the price tag
 - 29 modules across aimbot, visuals and misc options
 - Windows 10/11 support on Intel or AMD
 
-## The price is lower than you think
+## Plan length matters more than slogans
 
-The cheapest way in is a one-week key at $15, which lets you test the whole thing. A month is $35 and lifetime is $150. Our [pricing guide](/blog/battlefield-6-cheat-pricing/) shows how to choose, and the [provider checklist](/blog/how-to-choose-a-battlefield-6-cheat-provider/) shows what to verify before paying anyone.
+The shortest path in is usually a one-week key so you can test the whole stack. Monthly and lifetime windows are listed on the merchant checkout. Our [plan comparison](/blog/battlefield-6-cheat-pricing/) shows how to choose by duration, and the [provider checklist](/blog/how-to-choose-a-battlefield-6-cheat-provider/) shows what to verify before paying anyone.
 
 ## The honest bit
 

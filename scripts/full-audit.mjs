@@ -5,7 +5,7 @@ import { resolveDistDir } from './dist-dir.mjs';
 
 const root = process.cwd();
 const dist = resolveDistDir();
-const SITE = 'https://battlefield6hacks.net';
+const SITE = 'https://bf6cheat.org';
 
 const findings = [];
 

@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import { sitemapSerialize } from './src/config/sitemap.ts';
 
 export default defineConfig({
-  site: 'https://battlefield6hacks.net',
+  site: 'https://bf6cheat.org',
   trailingSlash: 'always',
   redirects: {
     '/cheats/': '/products/battlefield-6-cheats/',

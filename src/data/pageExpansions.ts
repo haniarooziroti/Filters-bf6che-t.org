@@ -25,7 +25,7 @@ export const supportExpansion = {
     {
       heading: 'Checkout and billing questions',
       paragraphs: [
-        'Checkout runs on the seller’s secure page linked from our site. We do not store card numbers on battlefield6hacks.net. If payment succeeded but your portal is empty, open a ticket with the processor receipt ID and the email used at checkout.',
+        'Checkout runs on the seller’s secure page linked from our site. We do not store card numbers on bf6cheat.org. If payment succeeded but your portal is empty, open a ticket with the processor receipt ID and the email used at checkout.',
         'Refund rules are listed in our Terms & Conditions. Support may offer fixes or replacements when the product fails on a supported setup while the status banner showed online—change-of-mind refunds are not offered.',
       ],
     },
@@ -68,7 +68,7 @@ export const supportExpansion = {
     {
       id: 'support-payment',
       q: 'Which payment methods work at checkout?',
-      a: 'Card, PayPal, Apple Pay, Google Pay, Cash App, Amazon Pay, and crypto are listed on the seller checkout page linked from our plans hub. Pick your duration (1 Week $15, 1 Month $35, Lifetime $150) before you pay.',
+      a: 'Card, PayPal, Apple Pay, Google Pay, Cash App, Amazon Pay, and crypto are listed on the seller checkout page linked from our plans hub. Pick your duration (weekly, monthly, or lifetime) on that page before you pay.',
     },
     {
       id: 'support-refunds',
@@ -112,14 +112,14 @@ export const aboutExpansion = {
     {
       heading: 'Battlefield 6: what this site covers',
       paragraphs: [
-        'Battlefield 6 Hacks is an editorial and commerce front for PC players comparing aimbot, ESP, wallhack, and full-suite plans before checkout. We publish module breakdowns, setup notes, forum links, and honest downtime reminders—not official game support.',
+        'BF6 Cheats is an editorial and commerce front for PC players comparing aimbot, ESP, wallhack, and full-suite plans before checkout. We publish module breakdowns, setup notes, forum links, and honest downtime reminders—not official game support.',
         'Players landing here usually want a clear map from marketing claims to what the operator portal actually ships: which modules belong to Complete versus Aimbot-only, how keys deliver, and where to read patch-day status.',
       ],
     },
     {
       heading: 'Forums, checkout paths, and player resources',
       paragraphs: [
-        `The forum hosts setup threads, OBS capture notes, and Conquest tuning discussions from other buyers. Checkout paths start on our plans hub and finish on the seller page linked through ${checkout}—prices shown locally ($15 week, $35 month, $150 lifetime) match the tiers described on product detail pages.`,
+        `The forum hosts setup threads, OBS capture notes, and Conquest tuning discussions from other buyers. Checkout paths start on our plans hub and finish on the seller page linked through ${checkout}—plan durations and modules match the tiers described on product detail pages.`,
         'Use the blog for long-form comparisons (pricing, ban risk, HWID resets) and the FAQ for quick filters by topic. Reviews summarize buyer feedback without replacing your own due diligence on status and compatibility.',
       ],
     },
@@ -227,10 +227,10 @@ export const productHubExpansion = {
       ],
     },
     {
-      heading: 'Pricing and delivery',
+      heading: 'Checkout and delivery',
       paragraphs: [
-        'Standard tiers share pricing: $15 for one week, $35 for one month (marked popular on cards), and $150 lifetime on Complete-class products. Checkout opens on the seller site linked from each Buy button; keys appear in the operator portal immediately after payment.',
-        'Payment methods listed in our pricing blog include card, PayPal, mobile wallets, and crypto—confirm on the live checkout page before you pay. HWID resets are handled through the portal or support when you change PCs.',
+        'Standard tiers offer weekly, monthly, and lifetime access windows on the merchant checkout page linked from each Buy button. Keys appear in the operator portal immediately after payment.',
+        'Payment methods listed on the seller checkout include card, PayPal, mobile wallets, and crypto—confirm on the live checkout page before you pay. HWID resets are handled through the portal or support when you change PCs.',
       ],
     },
     {
@@ -249,7 +249,7 @@ export const productHubExpansion = {
       ['Best for', 'Full-suite players', 'Tracking without full ESP', 'Map awareness without aim automation'],
       ['Typical modes', 'Conquest, Breakthrough, REDSEC', 'Infantry-focused fights', 'Callouts and positioning'],
       ['Upgrade path', '—', 'Step up via checkout to Complete', 'Step up via checkout to Complete'],
-      ['Weekly / monthly / lifetime', '$15 / $35 / $150', 'Same price grid', 'Same price grid'],
+      ['Weekly / monthly / lifetime', 'Weekly, monthly, or lifetime', 'Same plan options', 'Same plan options'],
     ],
   } satisfies ExpansionTable,
   faqs: [

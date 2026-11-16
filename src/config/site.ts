@@ -1,4 +1,4 @@
-export const SITE_DOMAIN = 'battlefield6hacks.net';
+export const SITE_DOMAIN = 'bf6cheat.org';
 export const SITE_URL = `https://${SITE_DOMAIN}`;
 export const PRODUCT_BASE = '/products/battlefield-6-cheats/';
 export const TITLE_PREFIX = 'Battlefield 6';

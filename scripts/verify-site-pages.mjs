@@ -3,7 +3,7 @@ import path from 'node:path';
 import { resolveDistDir } from './dist-dir.mjs';
 
 const dist = resolveDistDir();
-const SITE = 'https://battlefield6hacks.net';
+const SITE = 'https://bf6cheat.org';
 
 const samples = [
   { type: 'home', file: 'index.html' },
