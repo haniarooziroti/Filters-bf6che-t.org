@@ -8,7 +8,24 @@ export default {
     const host = url.hostname.toLowerCase();
     const isPreview = host.endsWith('.workers.dev') || host.endsWith('.pages.dev');
 
-    const assetResponse = await env.ASSETS.fetch(request);
+    if (!env.ASSETS?.fetch) {
+      return new Response(
+        'Site worker is misconfigured (missing ASSETS binding). Redeploy after npm run build.',
+        { status: 503, headers: { 'Content-Type': 'text/plain; charset=utf-8' } },
+      );
+    }
+
+    let assetResponse;
+    try {
+      assetResponse = await env.ASSETS.fetch(request);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      return new Response(`Asset fetch failed: ${message}`, {
+        status: 500,
+        headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+      });
+    }
+
     if (!isPreview) {
       return assetResponse;
     }

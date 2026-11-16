@@ -6,7 +6,7 @@ main = "worker.mjs"
 compatibility_date = "2025-10-11"
 
 [build]
-command = "YOUTUBE_DL_SKIP_PYTHON_CHECK=1 npm ci && npm run build"
+command = "npm ci && npm run build"
 cwd = "."
 
 [assets]

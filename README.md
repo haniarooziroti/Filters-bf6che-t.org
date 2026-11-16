@@ -20,14 +20,18 @@ If Cloudflare shows **“Fetching repository failed”**:
 ## Local development
 
 ```bash
-YOUTUBE_DL_SKIP_PYTHON_CHECK=1 npm ci
+npm ci
 npm run dev
 ```
+
+If Astro shows **“Tsconfig not found astro/tsconfigs/strict”**, stop the dev server, delete `node_modules`, and run `npm ci` again (a partial install leaves `astro` incomplete).
+
+Frame extraction (`npm run frames:extract`) is optional and needs `npx youtube-dl-exec` when you run that script.
 
 ## Build & deploy
 
 ```bash
-YOUTUBE_DL_SKIP_PYTHON_CHECK=1 npm ci
+npm ci
 npm run build
 npm run deploy
 ```
