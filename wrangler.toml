@@ -14,3 +14,12 @@ directory = "./dist"
 binding = "ASSETS"
 not_found_handling = "404-page"
 html_handling = "auto-trailing-slash"
+
+# Attach production hostnames to this worker (requires zone on same Cloudflare account).
+[[routes]]
+pattern = "bf6cheat.org"
+custom_domain = true
+
+[[routes]]
+pattern = "www.bf6cheat.org"
+custom_domain = true
