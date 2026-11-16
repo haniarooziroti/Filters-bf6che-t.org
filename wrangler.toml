@@ -15,11 +15,6 @@ binding = "ASSETS"
 not_found_handling = "404-page"
 html_handling = "auto-trailing-slash"
 
-# Attach production hostnames to this worker (requires zone on same Cloudflare account).
-[[routes]]
-pattern = "bf6cheat.org"
-custom_domain = true
-
-[[routes]]
-pattern = "www.bf6cheat.org"
-custom_domain = true
+# Custom domains for bf6cheat.org must be added in the dashboard (zone must be on this account).
+# Workers & Pages → bf6cheat-org → Settings → Domains & Routes → Add custom domain.
+workers_dev = true

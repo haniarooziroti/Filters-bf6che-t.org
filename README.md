@@ -44,7 +44,7 @@ npm run deploy
 
 Build output: `dist/` (served via Worker `ASSETS` binding in `worker.mjs`).
 
-If **https://bf6cheat.org** returns **500** but **workers.dev** works after deploy, the worker had no uploaded `dist/` assets or the custom domain was not on worker `bf6cheat-org`. Run `npm run deploy` (uploads assets + `wrangler.toml` routes for `bf6cheat.org` / `www`). In the dashboard: Worker **bf6cheat-org** → **Settings** → **Domains & Routes** must list those hostnames.
+If **https://bf6cheat.org** returns **500** but **workers.dev** works, run `npm run deploy` locally (uploads `dist/` to the `ASSETS` binding). Then in Cloudflare: **Workers & Pages** → **bf6cheat-org** → **Settings** → **Domains & Routes** → add **bf6cheat.org** and **www.bf6cheat.org** if missing. Remove any old route that points the domain at a different worker or an empty build. Wrangler cannot auto-attach the domain unless the zone lives on the same Cloudflare account (error 10082).
 
 Local dev errors (`tailwindcss` / `astro/tsconfigs/strict`): stop the dev server, delete `node_modules`, then `npm ci`.
 
