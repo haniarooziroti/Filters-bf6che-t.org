@@ -1,7 +1,13 @@
 {
-  "name": "site",
+  "name": "bf6cheat-org",
   "type": "module",
   "version": "0.0.1",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haniarooziroti/Filters-bf6che-t.org.git"
+  },
+  "homepage": "https://bf6cheat.org",
   "engines": {
     "node": ">=22.12.0"
   },

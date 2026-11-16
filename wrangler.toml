@@ -1,7 +1,13 @@
 # Static Astro site — custom worker for preview-host noindex; assets served from dist/.
+# GitHub (Cloudflare Workers Builds): https://github.com/haniarooziroti/Filters-bf6che-t.org
+# Production branch: main
 name = "bf6cheat-org"
 main = "worker.mjs"
 compatibility_date = "2025-10-11"
+
+[build]
+command = "YOUTUBE_DL_SKIP_PYTHON_CHECK=1 npm ci && npm run build"
+cwd = "."
 
 [assets]
 directory = "./dist"
