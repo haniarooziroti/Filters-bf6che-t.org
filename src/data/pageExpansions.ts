@@ -271,7 +271,7 @@ export const productHubExpansion = {
     {
       id: 'hub-payment',
       q: 'How does checkout work from this hub?',
-      a: `Select a tier card, click Buy, and finish on the seller checkout page linked via our affiliate path. Return to the portal for the loader—not third-party download links.`,
+      a: `Select a tier card, click Buy, and finish on the seller checkout page. Return to the portal for the loader—not third-party download links.`,
     },
     {
       id: 'hub-ban-risk',

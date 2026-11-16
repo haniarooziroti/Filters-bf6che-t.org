@@ -534,7 +534,7 @@ export const en: Translations = {
     privacy: {
       title: 'Privacy – cookies, contact data when you browse',
       description:
-        'Your privacy matters when you browse product pages. This overview explains how bf6cheat.org handles analytics, cookies, contact messages, and checkout referrals.',
+        'Your privacy matters when you browse product pages. This overview explains how bf6cheat.org handles analytics, cookies, contact messages, and secure checkout.',
       sections: [
         {
           heading: 'Privacy: Information we collect',

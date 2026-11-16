@@ -24,7 +24,7 @@ const navIconByHref: Record<string, IconName> = {
 };
 
 const purchaseUrl = PRIMARY_CHECKOUT_PATH;
-const affiliateRel = 'noopener noreferrer sponsored';
+const externalLinkRel = 'noopener noreferrer';
 ---
 
 <header class="pointer-events-none fixed inset-x-0 top-0 z-50">
@@ -52,7 +52,7 @@ const affiliateRel = 'noopener noreferrer sponsored';
 
     <div class="flex items-center gap-2">
       <div class="hidden items-center sm:flex">
-        <SlideRevealButton href={purchaseUrl} class="hidden lg:inline-flex" ariaLabel={t.ui.checkoutAria} rel={affiliateRel}>
+        <SlideRevealButton href={purchaseUrl} class="hidden lg:inline-flex" ariaLabel={t.ui.checkoutAria} rel={externalLinkRel}>
           {t.ui.browseCheats}
         </SlideRevealButton>
         <div class="nav-action-divider hidden items-center px-3 lg:flex" aria-hidden="true">
@@ -85,7 +85,7 @@ const affiliateRel = 'noopener noreferrer sponsored';
               </a>
             ))}
           </nav>
-          <Button as="a" href={purchaseUrl} rel={affiliateRel} variant="primary" class="w-full justify-center" aria-label={t.ui.checkoutAria}>
+          <Button as="a" href={purchaseUrl} rel={externalLinkRel} variant="primary" class="w-full justify-center" aria-label={t.ui.checkoutAria}>
             {t.ui.browseCheatsMobile}
           </Button>
           <div class="flex justify-center pt-1">

@@ -44,8 +44,8 @@ const {
 } = Astro.props;
 
 const displayFeatures = features.slice(0, maxFeatures);
-const isAffiliateCheckout = buyUrl.startsWith('http');
-const affiliateRel = isAffiliateCheckout ? 'noopener noreferrer sponsored' : undefined;
+const isExternalCheckout = buyUrl.startsWith('http');
+const externalLinkRel = isExternalCheckout ? 'noopener noreferrer' : undefined;
 
 const statusBadgeIcon = (text: string): IconName => {
   if (/limited/i.test(text)) return 'alert';
@@ -108,7 +108,7 @@ const statusBadgeIcon = (text: string): IconName => {
     <Button
       as="a"
       href={buyUrl}
-      rel={affiliateRel}
+      rel={externalLinkRel}
       variant="primary"
       size="sm"
       class="h-auto min-h-9 w-full whitespace-normal py-2 text-center leading-snug"

@@ -50,7 +50,7 @@ const { product } = Astro.props;
       <Button
         as="a"
         href={product.buyUrl}
-        rel={product.buyUrl.startsWith('http') ? 'noopener noreferrer sponsored' : undefined}
+        rel={product.buyUrl.startsWith('http') ? 'noopener noreferrer' : undefined}
         variant="primary"
         size="sm"
         class="rounded-full"

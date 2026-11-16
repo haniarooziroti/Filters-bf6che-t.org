@@ -68,7 +68,7 @@ const { product } = Astro.props;
       <Button
         as="a"
         href={product.buyUrl}
-        rel={product.buyUrl.startsWith('http') ? 'noopener noreferrer sponsored' : undefined}
+        rel={product.buyUrl.startsWith('http') ? 'noopener noreferrer' : undefined}
         variant="primary"
         size="lg"
         class="w-full rounded-xl"
@@ -78,7 +78,7 @@ const { product } = Astro.props;
       </Button>
 
       <p class="text-xs leading-relaxed text-muted-foreground">
-        Plan selection and payment happen on the merchant checkout page. We may earn a commission on qualifying purchases.
+        Plan selection and payment happen on the secure merchant checkout page.
       </p>
     </div>
   </div>

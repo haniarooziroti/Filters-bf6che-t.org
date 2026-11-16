@@ -71,7 +71,7 @@ if (!fs.existsSync(dist)) {
       fail('Product page missing Cloud DMA or HWID Spoofer cards');
     }
     if (/\$\d+/.test(complete)) fail('Product detail page still shows dollar pricing');
-    if (!complete.includes(CHECKOUT_URLS.battlefield6)) fail('Main BF6 affiliate URL missing on product page');
+    if (!complete.includes(CHECKOUT_URLS.battlefield6)) fail('Main BF6 checkout URL missing on product page');
   }
 }
 
